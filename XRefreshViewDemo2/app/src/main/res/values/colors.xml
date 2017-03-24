@@ -37,5 +37,7 @@
     <color name="colorIndicatorTextNormal">#FF555555</color>
     <color name="colorTransparent">#00000000</color>
     <color name="colorWhite">#ffffffff</color>
+
+    <color name="colorPrimaryDarkTrans">#CCf57257</color>
 </resources>
 

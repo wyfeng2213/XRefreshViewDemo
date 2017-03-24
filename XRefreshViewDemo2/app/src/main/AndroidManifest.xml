@@ -18,7 +18,8 @@
         <activity android:name=".refresh.RefreshActivity" />
         <activity android:name=".photo.PhotoActivity" />
         <activity android:name=".photo.ResultActivity" />
-        <activity android:name=".calendar.CanendarActivity"></activity>
+        <activity android:name=".calendar.CanendarActivity" />
+        <activity android:name=".zbar.QrCodeScanActivity"></activity>
     </application>
 
 </manifest>

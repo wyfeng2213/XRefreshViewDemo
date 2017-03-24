@@ -9,14 +9,49 @@
     </style>
 
     <style name="dialog">
-        <item name= "android:windowIsFloating" >true </item>
-        <item name ="android:windowIsTranslucent" >true </item>
-        <item name= "android:windowFrame">@null</item >
-        <item name= "android:windowNoTitle" >true </item>
-        <item name ="android:colorBackgroundCacheHint" >@null </item>
-        <item name ="android:windowBackground" >@color/colorTransparent </item>
-        <item name ="android:windowContentOverlay" >@null </item>
-        <item name ="android:windowActionModeOverlay" >true </item>
-    </style >
+        <item name="android:windowIsFloating">true</item>
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:windowFrame">@null</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:colorBackgroundCacheHint">@null</item>
+        <item name="android:windowBackground">@color/colorTransparent</item>
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="android:windowActionModeOverlay">true</item>
+    </style>
+
+
+    <!-- 适用于开启滑动返回功能的Activity -->
+    <style name="AppTheme.Transparent">
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:windowIsTranslucent">true</item>
+    </style>
+
+    <!-- 适用于欢迎界面避免第一次进来白屏或黑屏 -->
+    <style name="AppTheme.Transparent.Splash">
+        <item name="android:windowDisablePreview">true</item>
+    </style>
+
+    <style name="MatchWrapTv" parent="MatchWrap">
+        <item name="android:textSize">12sp</item>
+        <item name="android:textColor">@android:color/white</item>
+        <item name="android:gravity">center</item>
+        <item name="android:background">@drawable/selector_btn_orange</item>
+        <item name="android:layout_margin">10dp</item>
+        <item name="android:onClick">onClick</item>
+        <item name="android:padding">8dp</item>
+    </style>
+
+    <style name="AutoWrapTv" parent="AutoWrap">
+        <item name="android:textSize">12sp</item>
+        <item name="android:textColor">@android:color/white</item>
+        <item name="android:gravity">center</item>
+        <item name="android:background">@drawable/selector_btn_orange</item>
+        <item name="android:layout_margin">5dp</item>
+        <item name="android:onClick">onClick</item>
+        <item name="android:paddingLeft">4dp</item>
+        <item name="android:paddingRight">4dp</item>
+        <item name="android:paddingTop">8dp</item>
+        <item name="android:paddingBottom">8dp</item>
+    </style>
 
 </resources>
