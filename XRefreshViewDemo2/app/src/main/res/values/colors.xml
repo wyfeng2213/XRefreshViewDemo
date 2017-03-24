@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorAccent">#FF4081</color>
+    <!--选择相册的颜色值-->
+    <color name="multiple_image_select_primaryDark">#212121</color>
+    <!-- 常用颜色值 -->
+    <color name="bg">#AAcccccc</color>
+    <color name="white">#FFFFFF</color>
+    <color name="black">#000000</color>
+    <color name="black_flow">#333333</color>
+    <color name="gray_drak">#666666</color>
+    <color name="gray">#808080</color>
+    <color name="red">#FF0000</color>
+    <color name="gold">#FFD700</color>
+    <color name="yellow">#FFFF00</color>
+    <color name="green">#008000</color>
+    <color name="purple">#800080</color>
+    <color name="pink">#FFC0CB</color>
+    <color name="orange">#EB6C01</color>
+    <color name="orange_dark">#CC5E02</color>
+    <color name="lemonyellow">#FFFACD</color>
+    <color name="graywhite">#F5F5F5</color>
+    <color name="grayslate">#708090</color>
+    <color name="lightblue">#0081CC</color>
+    <color name="deepblue">#0070FF</color>
+    <color name="white40">#40FFFFFF</color>
+
+    <color name="service_item_color">#000000</color>
+
+    <!--日历颜色值-->
+    <color name="colorGregorian">#ff3388ff</color>
+    <color name="colorLunar">#ffee5544</color>
+    <color name="colorPickerTextNormal">#FF555555</color>
+    <color name="colorPickerTextSelected">#FFF56313</color>
+    <color name="colorIndicatorTextNormal">#FF555555</color>
+    <color name="colorTransparent">#00000000</color>
+    <color name="colorWhite">#ffffffff</color>
+</resources>
+

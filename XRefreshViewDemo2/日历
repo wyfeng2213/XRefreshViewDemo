@@ -1,0 +1,31 @@
+1.导入包 和 compile 'cn.carbs.android:IndicatorView:1.0.2'
+2. String color style 文件 DialogGLC  CalendarDialogListener
+3.监听点击之后的回调 获取数据
+
+<style name="dialog">
+        <item name= "android:windowIsFloating" >true </item>
+        <item name ="android:windowIsTranslucent" >true </item>
+        <item name= "android:windowFrame">@null</item >
+        <item name= "android:windowNoTitle" >true </item>
+        <item name ="android:colorBackgroundCacheHint" >@null </item>
+        <item name ="android:windowBackground" >@color/colorTransparent </item>
+        <item name ="android:windowContentOverlay" >@null </item>
+        <item name ="android:windowActionModeOverlay" >true </item>
+    </style >
+    ==========================================
+    <color name="colorGregorian">#ff3388ff</color>
+    <color name="colorLunar">#ffee5544</color>
+    <color name="colorPickerTextNormal">#FF555555</color>
+    <color name="colorPickerTextSelected">#FFF56313</color>
+    <color name="colorIndicatorTextNormal">#FF555555</color>
+    <color name="colorTransparent">#00000000</color>
+    <color name="colorWhite">#ffffffff</color>
+
+      =================================================
+    <string name="get_data">获取数据</string>
+    <string name="in_dialog">在Dialog中显示</string>
+
+    <string-array name="indicator_string_array">
+        <item>公历</item>
+        <item>农历</item>
+    </string-array>

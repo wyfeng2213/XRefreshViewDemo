@@ -1,0 +1,20 @@
+下拉刷新:
+compile project(':refreshlibrary')
+RefreshActivity,
+
+拍照
+1.compile 'com.jph.takephoto:takephoto_library:4.0.3'
+2.主要的类: PhotoActivity  CustomHelper  ResultActivity
+3.参数列表的布局文件: common_layout
+需要在布局加上这两个名字
+4. btnPickBySelect 选择相册 btnPickByTake 拍照
+5.继承 TakePhotoActivity  重写方法
+5. 点击事件需要加入   private CustomHelper customHelper;  customHelper.onClick(view, getTakePhoto());
+6.图片获取
+ result.getImages()
+ Glide.with(this).load(new File(images.get(i).getCompressPath())).into(imageView1);
+文件路径:
+File file=new File(Environment.getExternalStorageDirectory(), "/temp/"+ System.currentTimeMillis() + ".jpg");
+
+
+Logger 打印不出来日志 , 重新选择版本

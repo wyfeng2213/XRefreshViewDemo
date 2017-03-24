@@ -1,0 +1,20 @@
+<com.andview.refreshview.XRefreshView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:xrefreshview="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/custom_view"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_below="@+id/layout_head"
+    android:background="#fff"
+    android:orientation="vertical"
+    xrefreshview:isHeightMatchParent="true"
+    xrefreshview:isWidthMatchParent="true">
+
+    <ListView
+        android:id="@+id/lv"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+
+        android:fadingEdge="none"
+        android:scrollbars="none"></ListView>
+
+</com.andview.refreshview.XRefreshView>

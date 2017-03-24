@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">XRefreshViewDemo</string>
+    <string name="get_data">确定</string>
+    <string name="in_dialog">在Dialog中显示</string>
+
+    <string-array name="indicator_string_array">
+        <item>公历</item>
+        <item>农历</item>
+    </string-array>
+</resources>
