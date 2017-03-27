@@ -20,7 +20,8 @@
         <activity android:name=".photo.ResultActivity" />
         <activity android:name=".calendar.CanendarActivity" />
         <activity android:name=".zbar.QrCodeScanActivity" />
-        <activity android:name=".switchbutton.SwitchButtonActivity"></activity>
+        <activity android:name=".switchbutton.SwitchButtonActivity" />
+        <activity android:name=".tab.ScrollTabActivity"></activity>
     </application>
 
 </manifest>

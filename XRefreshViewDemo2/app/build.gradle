@@ -36,6 +36,8 @@ dependencies {
     compile 'cn.bingoogolapple:bga-adapter:1.1.8@aar'
     // 开关按钮
     compile 'me.xiaopan:switchbutton:1.2.0'
+    //viewpage滑动控件
+    compile 'com.shizhefei:ViewPagerIndicator:1.1.5'
 
     compile project(':refreshlibrary')
     compile project(':calendarlibrary')

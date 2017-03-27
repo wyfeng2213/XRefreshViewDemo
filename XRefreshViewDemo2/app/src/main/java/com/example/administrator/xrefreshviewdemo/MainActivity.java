@@ -11,6 +11,7 @@ import com.example.administrator.xrefreshviewdemo.calendar.CanendarActivity;
 import com.example.administrator.xrefreshviewdemo.photo.PhotoActivity;
 import com.example.administrator.xrefreshviewdemo.refresh.RefreshActivity;
 import com.example.administrator.xrefreshviewdemo.switchbutton.SwitchButtonActivity;
+import com.example.administrator.xrefreshviewdemo.tab.ScrollTabActivity;
 import com.example.administrator.xrefreshviewdemo.zbar.QrCodeScanActivity;
 
 public class MainActivity extends Activity implements View.OnClickListener {
@@ -22,6 +23,7 @@ public class MainActivity extends Activity implements View.OnClickListener {
     private Button bt_calendar;
     private Button bt_qrcode;
     private Button bt_switch;
+    private Button bt_tab;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,6 +45,8 @@ public class MainActivity extends Activity implements View.OnClickListener {
         bt_qrcode.setOnClickListener(this);
         bt_switch = (Button) findViewById(R.id.bt_switch);
         bt_switch.setOnClickListener(this);
+        bt_tab = (Button) findViewById(R.id.bt_tab);
+        bt_tab.setOnClickListener(this);
     }
 
     @Override
@@ -62,6 +66,9 @@ public class MainActivity extends Activity implements View.OnClickListener {
                 break;
             case R.id.bt_switch:
                 SwitchButtonActivity.startActivity(this);
+                break;
+            case R.id.bt_tab:
+                ScrollTabActivity.startActivity(this);
                 break;
         }
     }

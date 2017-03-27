@@ -36,7 +36,7 @@
         android:layout_margin="10dp"
         android:padding="10dp"
         android:text="二维码扫描" />
-s
+
     <Button
         android:id="@+id/bt_switch"
         android:layout_width="match_parent"
@@ -45,4 +45,11 @@ s
         android:padding="10dp"
         android:text="开关按钮" />
 
+    <Button
+        android:id="@+id/bt_tab"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:padding="10dp"
+        android:text="可滑动tab界面" />
 </LinearLayout>

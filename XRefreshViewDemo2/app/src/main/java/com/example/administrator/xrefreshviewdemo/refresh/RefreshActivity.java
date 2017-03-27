@@ -12,8 +12,8 @@ import android.widget.Toast;
 
 import com.andview.refreshview.XRefreshView;
 import com.example.administrator.xrefreshviewdemo.R;
-import com.example.administrator.xrefreshviewdemo.adapter.ListViewAdapter;
-import com.example.administrator.xrefreshviewdemo.adapter.viewholder.GodViewHolder;
+import com.example.administrator.xrefreshviewdemo.baseadapter.ListViewAdapter;
+import com.example.administrator.xrefreshviewdemo.baseadapter.viewholder.GodViewHolder;
 
 import java.util.ArrayList;
 import java.util.List;
