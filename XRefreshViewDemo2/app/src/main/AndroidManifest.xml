@@ -19,7 +19,8 @@
         <activity android:name=".photo.PhotoActivity" />
         <activity android:name=".photo.ResultActivity" />
         <activity android:name=".calendar.CanendarActivity" />
-        <activity android:name=".zbar.QrCodeScanActivity"></activity>
+        <activity android:name=".zbar.QrCodeScanActivity" />
+        <activity android:name=".switchbutton.SwitchButtonActivity"></activity>
     </application>
 
 </manifest>

@@ -10,6 +10,7 @@ import android.widget.LinearLayout;
 import com.example.administrator.xrefreshviewdemo.calendar.CanendarActivity;
 import com.example.administrator.xrefreshviewdemo.photo.PhotoActivity;
 import com.example.administrator.xrefreshviewdemo.refresh.RefreshActivity;
+import com.example.administrator.xrefreshviewdemo.switchbutton.SwitchButtonActivity;
 import com.example.administrator.xrefreshviewdemo.zbar.QrCodeScanActivity;
 
 public class MainActivity extends Activity implements View.OnClickListener {
@@ -20,6 +21,7 @@ public class MainActivity extends Activity implements View.OnClickListener {
     private LinearLayout activity_take_photo;
     private Button bt_calendar;
     private Button bt_qrcode;
+    private Button bt_switch;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,6 +41,8 @@ public class MainActivity extends Activity implements View.OnClickListener {
         bt_calendar.setOnClickListener(this);
         bt_qrcode = (Button) findViewById(R.id.bt_qrcode);
         bt_qrcode.setOnClickListener(this);
+        bt_switch = (Button) findViewById(R.id.bt_switch);
+        bt_switch.setOnClickListener(this);
     }
 
     @Override
@@ -55,6 +59,9 @@ public class MainActivity extends Activity implements View.OnClickListener {
                 break;
             case R.id.bt_qrcode:
                 QrCodeScanActivity.startActivity(this);
+                break;
+            case R.id.bt_switch:
+                SwitchButtonActivity.startActivity(this);
                 break;
         }
     }
