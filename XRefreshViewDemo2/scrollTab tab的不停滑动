@@ -1,0 +1,14 @@
+1.加入gradle依赖
+    compile 'com.shizhefei:ViewPagerIndicator:1.1.5'
+2. 控件的引用 activity 的编写
+    <com.shizhefei.view.indicator.ScrollIndicatorView
+        android:id="@+id/moretab_indicator"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:fillViewport="false" />
+
+    <android.support.v4.view.ViewPager
+        android:id="@+id/moretab_viewPager"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+3.adapter的使用

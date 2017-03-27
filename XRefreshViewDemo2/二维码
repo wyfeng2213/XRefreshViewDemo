@@ -1,0 +1,8 @@
+1.导入zar包
+2.TestScanActivity 和布局文件 activity_test_scan.xml  view_control  style color string
+
+3. gradle配置//zar扫描
+    compile 'cn.bingoogolapple:bga-qrcodecore:1.1.7@aar'
+    compile 'cn.bingoogolapple:bga-zbar:1.1.7@aar'
+    compile 'cn.bingoogolapple:bga-photopicker:1.2.3@aar'
+    compile 'cn.bingoogolapple:bga-adapter:1.1.8@aar'
