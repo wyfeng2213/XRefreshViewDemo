@@ -2,6 +2,7 @@ package com.example.administrator.xrefreshviewdemo.zxing;
 
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Bitmap;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.text.TextUtils;
@@ -12,6 +13,7 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.Toast;
 
+import com.cmcc.healthlibrary.utils.BitmapUtils;
 import com.example.administrator.xrefreshviewdemo.R;
 import com.example.administrator.xrefreshviewdemo.util.QrcodeUtils;
 
@@ -21,6 +23,7 @@ public class ZXingCreatePicActivity extends AppCompatActivity implements View.On
     private ImageView img;
     private LinearLayout activity_zxing_create_pic;
     private EditText edt_content;
+    private ImageView img_create;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,7 +40,29 @@ public class ZXingCreatePicActivity extends AppCompatActivity implements View.On
         bt_create.setOnClickListener(this);
         edt_content = (EditText) findViewById(R.id.edt_content);
         edt_content.setOnClickListener(this);
+        img_create = (ImageView) findViewById(R.id.img_create);
+
+        Bitmap bitmap = BitmapUtils.drawable2Bitmap(getResources().getDrawable(R.mipmap.custom_grid_scan_line));
+        Bitmap resultBitmap = BitmapUtils.addTextWatermark(bitmap, "测试", 15, R.color.bg, 50, 200, 200);
+        img_create.setImageBitmap(resultBitmap);
+
     }
+
+//    /**
+//     * 添加文字水印
+//     *
+//     * @param src      源图片
+//     * @param content  水印文本
+//     * @param textSize 水印字体大小
+//     * @param color    水印字体颜色
+//     * @param alpha    水印字体透明度
+//     * @param x        起始坐标x
+//     * @param y        起始坐标y
+//     * @return 带有文字水印的图片
+//     */
+//    public static Bitmap addTextWatermark(Bitmap src, String content, int textSize, int color, int alpha, float x, float y) {
+//        return addTextWatermark(src, content, textSize, color, alpha, x, y, false);
+//    }
 
     public static void startActivity(Context context) {
         Intent starter = new Intent(context, ZXingCreatePicActivity.class);

@@ -1,1 +1,1 @@
-include ':app', ':refreshlibrary', ':calendarlibrary'
+include ':app', ':refreshlibrary', ':calendarlibrary', ':browse', ':healthlibrary'

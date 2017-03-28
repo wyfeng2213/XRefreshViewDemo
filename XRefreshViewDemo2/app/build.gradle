@@ -24,7 +24,6 @@ dependencies {
     androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
         exclude group: 'com.android.support', module: 'support-annotations'
     })
-
     testCompile 'junit:junit:4.12'
     compile 'com.jph.takephoto:takephoto_library:4.0.3'
     // 日历控件
@@ -34,16 +33,14 @@ dependencies {
     compile 'cn.bingoogolapple:bga-zbar:1.1.7@aar'
     compile 'cn.bingoogolapple:bga-photopicker:1.2.3@aar'
     compile 'cn.bingoogolapple:bga-adapter:1.1.8@aar'
-
     //zxing 扫描
     compile 'com.google.zxing:core:3.2.1'
     compile 'cn.bingoogolapple:bga-zxing:1.1.7@aar'
-
     // 开关按钮
     compile 'me.xiaopan:switchbutton:1.2.0'
     //viewpage滑动控件
     compile 'com.shizhefei:ViewPagerIndicator:1.1.5'
-
     compile project(':refreshlibrary')
     compile project(':calendarlibrary')
+    compile project(':healthlibrary')
 }
