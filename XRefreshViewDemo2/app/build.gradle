@@ -34,6 +34,11 @@ dependencies {
     compile 'cn.bingoogolapple:bga-zbar:1.1.7@aar'
     compile 'cn.bingoogolapple:bga-photopicker:1.2.3@aar'
     compile 'cn.bingoogolapple:bga-adapter:1.1.8@aar'
+
+    //zxing 扫描
+    compile 'com.google.zxing:core:3.2.1'
+    compile 'cn.bingoogolapple:bga-zxing:1.1.7@aar'
+
     // 开关按钮
     compile 'me.xiaopan:switchbutton:1.2.0'
     //viewpage滑动控件

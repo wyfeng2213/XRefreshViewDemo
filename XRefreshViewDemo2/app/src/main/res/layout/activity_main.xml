@@ -30,12 +30,27 @@
         android:text="日历选择" />
 
     <Button
-        android:id="@+id/bt_qrcode"
+        android:id="@+id/bt_zbar_qrcode"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="10dp"
         android:padding="10dp"
-        android:text="二维码扫描" />
+        android:text="zbar二维码扫描" />
+    <Button
+        android:id="@+id/bt_zxing_qrcode"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:padding="10dp"
+        android:text="zxing二维码扫描" />
+
+    <Button
+        android:id="@+id/bt_zxing_create"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:padding="10dp"
+        android:text="zxing二维码生成" />
 
     <Button
         android:id="@+id/bt_switch"
