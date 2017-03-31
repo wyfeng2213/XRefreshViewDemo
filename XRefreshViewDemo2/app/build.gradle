@@ -40,6 +40,13 @@ dependencies {
     compile 'me.xiaopan:switchbutton:1.2.0'
     //viewpage滑动控件
     compile 'com.shizhefei:ViewPagerIndicator:1.1.5'
+
+    //仿iOS的AlertViewController
+    compile 'com.bigkoo:alertview:1.0.3'
+    //图片放大
+//    compile 'com.github.githubwing:DragPhotoView:1.0.1'
+    compile 'com.bm.photoview:library:1.4.1'
+
     compile project(':refreshlibrary')
     compile project(':calendarlibrary')
     compile project(':healthlibrary')

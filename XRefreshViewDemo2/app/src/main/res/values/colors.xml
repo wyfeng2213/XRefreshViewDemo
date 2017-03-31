@@ -39,5 +39,7 @@
     <color name="colorWhite">#ffffffff</color>
 
     <color name="colorPrimaryDarkTrans">#CCf57257</color>
+
+    <color name="image_color">#f6f6f6</color>
 </resources>
 
