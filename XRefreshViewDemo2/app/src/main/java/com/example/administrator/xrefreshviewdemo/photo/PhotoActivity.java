@@ -10,12 +10,9 @@ import android.view.View;
 import android.widget.Button;
 
 import com.example.administrator.xrefreshviewdemo.R;
-import com.jph.takephoto.app.TakePhoto;
 import com.jph.takephoto.app.TakePhotoActivity;
-import com.jph.takephoto.compress.CompressConfig;
 import com.jph.takephoto.model.TImage;
 import com.jph.takephoto.model.TResult;
-import com.jph.takephoto.model.TakePhotoOptions;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -48,7 +45,7 @@ public class PhotoActivity extends TakePhotoActivity implements View.OnClickList
     private void initRecylerView() {
         //设置RecyclerView
         recyclerView = (RecyclerView) findViewById(R.id.recyclerView);
-        recyclerView.setLayoutManager(new GridLayoutManager(this, 3));
+        recyclerView.setLayoutManager(new GridLayoutManager(this, 1));
         photoAdapter = new PhotoAdapter(this, onAddPicListener, onPicClickListener);
         photoAdapter.setSelectMax(8);
         recyclerView.setAdapter(photoAdapter);
@@ -103,26 +100,6 @@ public class PhotoActivity extends TakePhotoActivity implements View.OnClickList
         }
     };
 
-    //设置Takephoto 使用TakePhoto自带的相册   照片旋转角度纠正
-    private void configTakePhotoOption(TakePhoto takePhoto) {
-        TakePhotoOptions.Builder builder = new TakePhotoOptions.Builder();
-        builder.setWithOwnGallery(true);
-        builder.setCorrectImage(true);
-        takePhoto.setTakePhotoOptions(builder.create());
-    }
-
-    //设置takephoto的照片使用压缩
-    private void configCompress(TakePhoto takePhoto) {
-        CompressConfig config;
-        config = new CompressConfig.Builder()
-                .setMaxSize(102400)
-                .setMaxPixel(800)
-                .enableReserveRaw(true)
-                .create();
-        takePhoto.onEnableCompress(config, false);
-    }
-
-    //===========================================================
 
     @Override
     public void takeCancel() {

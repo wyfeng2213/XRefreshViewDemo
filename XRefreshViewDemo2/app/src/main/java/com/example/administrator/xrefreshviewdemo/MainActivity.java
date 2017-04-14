@@ -11,7 +11,10 @@ import com.example.administrator.xrefreshviewdemo.calendar.CanendarActivity;
 import com.example.administrator.xrefreshviewdemo.photo.PhotoActivity;
 import com.example.administrator.xrefreshviewdemo.refresh.RefreshActivity;
 import com.example.administrator.xrefreshviewdemo.switchbutton.SwitchButtonActivity;
+import com.example.administrator.xrefreshviewdemo.tab.GuideActivity;
+import com.example.administrator.xrefreshviewdemo.tab.MoreTab2Activity;
 import com.example.administrator.xrefreshviewdemo.tab.ScrollTabActivity;
+import com.example.administrator.xrefreshviewdemo.wheelview.WheelActivity;
 import com.example.administrator.xrefreshviewdemo.zbar.ZbarActivity;
 import com.example.administrator.xrefreshviewdemo.zxing.ZXingCreatePicActivity;
 import com.example.administrator.xrefreshviewdemo.zxing.ZxingActivity;
@@ -28,6 +31,9 @@ public class MainActivity extends Activity implements View.OnClickListener {
     private Button bt_tab;
     private Button bt_zxing_qrcode;
     private Button bt_zxing_create;
+    private Button bt_tab2;
+    private Button bt_tab3;
+    private Button bt_wheel;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -55,6 +61,12 @@ public class MainActivity extends Activity implements View.OnClickListener {
         bt_zxing_qrcode.setOnClickListener(this);
         bt_zxing_create = (Button) findViewById(R.id.bt_zxing_create);
         bt_zxing_create.setOnClickListener(this);
+        bt_tab2 = (Button) findViewById(R.id.bt_tab2);
+        bt_tab2.setOnClickListener(this);
+        bt_tab3 = (Button) findViewById(R.id.bt_tab3);
+        bt_tab3.setOnClickListener(this);
+        bt_wheel = (Button) findViewById(R.id.bt_wheel);
+        bt_wheel.setOnClickListener(this);
     }
 
     @Override
@@ -83,6 +95,15 @@ public class MainActivity extends Activity implements View.OnClickListener {
                 break;
             case R.id.bt_zxing_create:
                 ZXingCreatePicActivity.startActivity(this);
+                break;
+            case R.id.bt_tab2:
+                MoreTab2Activity.startActivity(this);
+                break;
+            case R.id.bt_tab3:
+                GuideActivity.startActivity(this);
+                break;
+            case R.id.bt_wheel:
+                WheelActivity.startActivity(this);
                 break;
         }
     }

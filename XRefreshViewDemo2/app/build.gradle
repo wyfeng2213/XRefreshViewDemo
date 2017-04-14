@@ -47,6 +47,9 @@ dependencies {
 //    compile 'com.github.githubwing:DragPhotoView:1.0.1'
     compile 'com.bm.photoview:library:1.4.1'
 
+
+    compile 'cn.qqtheme.framework:WheelPicker:1.4.5'
+
     compile project(':refreshlibrary')
     compile project(':calendarlibrary')
     compile project(':healthlibrary')

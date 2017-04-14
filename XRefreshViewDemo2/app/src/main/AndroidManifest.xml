@@ -22,8 +22,12 @@
         <activity android:name=".zbar.ZbarActivity" />
         <activity android:name=".switchbutton.SwitchButtonActivity" />
         <activity android:name=".tab.ScrollTabActivity" />
+        <activity android:name=".tab.MoreTab2Activity" />
         <activity android:name=".zxing.ZxingActivity" />
-        <activity android:name=".zxing.ZXingCreatePicActivity"></activity>
+        <activity android:name=".zxing.ZXingCreatePicActivity" />
+        <activity android:name=".tab.GuideActivity" />
+        <!-- <activity android:name=".UI.RadioButtonActivity"></activity> -->
+        <activity android:name=".wheelview.WheelActivity"></activity>
     </application>
 
 </manifest>

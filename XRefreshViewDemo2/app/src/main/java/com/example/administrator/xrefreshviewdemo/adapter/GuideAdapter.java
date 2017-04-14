@@ -9,29 +9,27 @@ import android.util.TypedValue;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.TextView;
 
-import com.example.administrator.xrefreshviewdemo.R;
 import com.example.administrator.xrefreshviewdemo.tab.MoreFragment;
 import com.shizhefei.view.indicator.IndicatorViewPager;
 
 /**
  * Description:
- * Date：2017/03/27 16:21
+ * Date：2017/04/13 17:29
  * Author: wangyong
  */
 
-public class MyAdapter extends IndicatorViewPager.IndicatorFragmentPagerAdapter {
+public class GuideAdapter extends IndicatorViewPager.IndicatorFragmentPagerAdapter {
+    private String[] names = {"热点", "外科", "口腔科"};
     private LayoutInflater inflate;
-    private String[] names;
     Context mcontext;
 
-    public MyAdapter(Context context, FragmentManager fragmentManager, String[] namearr) {
+    public GuideAdapter(Context context, FragmentManager fragmentManager) {
         super(fragmentManager);
-        this.names = namearr;
         this.mcontext = context;
         inflate = LayoutInflater.from(mcontext);
     }
+
 
     @Override
     public int getCount() {
@@ -41,12 +39,13 @@ public class MyAdapter extends IndicatorViewPager.IndicatorFragmentPagerAdapter 
     @Override
     public View getViewForTab(int position, View convertView, ViewGroup container) {
         if (convertView == null) {
-            convertView = inflate.inflate(R.layout.tab_top, container, false);
+            convertView = new View(mcontext);
+            convertView.setLayoutParams(new ViewGroup.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT));
         }
-        TextView textView = (TextView) convertView;
-        textView.setText(names[position % names.length]);
-        int padding = dipToPix(20);
-        textView.setPadding(padding, 0, padding, 0);
+//        TextView textView = (TextView) convertView;
+//        textView.setText(names[position % names.length]);
+//        int padding = dipToPix(20);
+//        textView.setPadding(padding, 0, padding, 0);
         return convertView;
     }
 
@@ -54,8 +53,8 @@ public class MyAdapter extends IndicatorViewPager.IndicatorFragmentPagerAdapter 
     public Fragment getFragmentForPage(int position) {
         MoreFragment fragment = new MoreFragment();
         Bundle bundle = new Bundle();
-        bundle.putInt(MoreFragment.INTENT_INT_INDEX, position);
-        fragment.setArguments(bundle);
+//        bundle.putInt(MoreFragment.INTENT_INT_INDEX, position);
+//        fragment.setArguments(bundle);
         return fragment;
     }
 
@@ -76,5 +75,4 @@ public class MyAdapter extends IndicatorViewPager.IndicatorFragmentPagerAdapter 
         int size = (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, dip, mcontext.getResources().getDisplayMetrics());
         return size;
     }
-
 }
