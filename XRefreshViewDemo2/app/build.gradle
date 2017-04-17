@@ -17,6 +17,12 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
+    repositories {
+        maven {
+            url "https://jitpack.io"
+        }
+    }
+
 }
 
 dependencies {
@@ -49,6 +55,8 @@ dependencies {
 
 
     compile 'cn.qqtheme.framework:WheelPicker:1.4.5'
+    //图表
+    compile 'com.github.lecho:hellocharts-android:v1.5.8'
 
     compile project(':refreshlibrary')
     compile project(':calendarlibrary')

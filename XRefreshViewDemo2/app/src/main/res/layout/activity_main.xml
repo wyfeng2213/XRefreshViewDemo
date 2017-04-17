@@ -99,5 +99,21 @@
             android:layout_margin="10dp"
             android:padding="10dp"
             android:text="wheel滑动" />
+
+        <Button
+            android:id="@+id/bt_chat"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:padding="10dp"
+            android:text="图表展示" />
+
+        <Button
+            android:id="@+id/bt_toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:padding="10dp"
+            android:text="toolbar使用" />
     </LinearLayout>
 </ScrollView>

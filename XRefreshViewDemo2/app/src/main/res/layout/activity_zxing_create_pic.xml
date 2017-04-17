@@ -11,8 +11,10 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="10dp"
-        android:textColor="@color/black"
-        android:hint="请输入内容" />
+        android:hint="请输入内容"
+        android:imeOptions="actionSend"
+        android:singleLine="true"
+        android:textColor="@color/black" />
 
     <Button
         android:id="@+id/bt_create"

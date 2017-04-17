@@ -45,7 +45,7 @@ public class PhotoActivity extends TakePhotoActivity implements View.OnClickList
     private void initRecylerView() {
         //设置RecyclerView
         recyclerView = (RecyclerView) findViewById(R.id.recyclerView);
-        recyclerView.setLayoutManager(new GridLayoutManager(this, 1));
+        recyclerView.setLayoutManager(new GridLayoutManager(this, 3));
         photoAdapter = new PhotoAdapter(this, onAddPicListener, onPicClickListener);
         photoAdapter.setSelectMax(8);
         recyclerView.setAdapter(photoAdapter);

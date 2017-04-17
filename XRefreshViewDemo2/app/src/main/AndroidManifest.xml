@@ -27,7 +27,10 @@
         <activity android:name=".zxing.ZXingCreatePicActivity" />
         <activity android:name=".tab.GuideActivity" />
         <!-- <activity android:name=".UI.RadioButtonActivity"></activity> -->
-        <activity android:name=".wheelview.WheelActivity"></activity>
+        <activity android:name=".wheelview.WheelActivity" />
+        <activity android:name=".chat.ChartActivity" />
+        <activity android:name=".toolbar.ToolBarTestActivty"></activity>
+        <activity android:name=".toolbar.ToolBarTestActivty2"></activity>
     </application>
 
 </manifest>

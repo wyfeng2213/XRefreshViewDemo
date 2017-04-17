@@ -8,12 +8,14 @@ import android.widget.Button;
 import android.widget.LinearLayout;
 
 import com.example.administrator.xrefreshviewdemo.calendar.CanendarActivity;
+import com.example.administrator.xrefreshviewdemo.chat.ChartActivity;
 import com.example.administrator.xrefreshviewdemo.photo.PhotoActivity;
 import com.example.administrator.xrefreshviewdemo.refresh.RefreshActivity;
 import com.example.administrator.xrefreshviewdemo.switchbutton.SwitchButtonActivity;
 import com.example.administrator.xrefreshviewdemo.tab.GuideActivity;
 import com.example.administrator.xrefreshviewdemo.tab.MoreTab2Activity;
 import com.example.administrator.xrefreshviewdemo.tab.ScrollTabActivity;
+import com.example.administrator.xrefreshviewdemo.toolbar.ToolBarTestActivty2;
 import com.example.administrator.xrefreshviewdemo.wheelview.WheelActivity;
 import com.example.administrator.xrefreshviewdemo.zbar.ZbarActivity;
 import com.example.administrator.xrefreshviewdemo.zxing.ZXingCreatePicActivity;
@@ -34,6 +36,9 @@ public class MainActivity extends Activity implements View.OnClickListener {
     private Button bt_tab2;
     private Button bt_tab3;
     private Button bt_wheel;
+    private Button bt_chat;
+    private Button bt_zbar_qrcode;
+    private Button bt_toolbar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -67,6 +72,12 @@ public class MainActivity extends Activity implements View.OnClickListener {
         bt_tab3.setOnClickListener(this);
         bt_wheel = (Button) findViewById(R.id.bt_wheel);
         bt_wheel.setOnClickListener(this);
+        bt_chat = (Button) findViewById(R.id.bt_chat);
+        bt_chat.setOnClickListener(this);
+        bt_zbar_qrcode = (Button) findViewById(R.id.bt_zbar_qrcode);
+        bt_zbar_qrcode.setOnClickListener(this);
+        bt_toolbar = (Button) findViewById(R.id.bt_toolbar);
+        bt_toolbar.setOnClickListener(this);
     }
 
     @Override
@@ -104,6 +115,12 @@ public class MainActivity extends Activity implements View.OnClickListener {
                 break;
             case R.id.bt_wheel:
                 WheelActivity.startActivity(this);
+                break;
+            case R.id.bt_chat:
+                ChartActivity.startActivity(this);
+                break;
+            case R.id.bt_toolbar:
+                ToolBarTestActivty2.startActivity(this);
                 break;
         }
     }
