@@ -57,6 +57,7 @@ public class PhotoActivity extends TakePhotoActivity implements View.OnClickList
         public void onAddPicClick(int type, int position) {
             switch (type) {
                 case 0:
+                    customHelper.onClick(CustomHelper.SELECT_PHOTO, getTakePhoto());
 //                    new AlertView("上传图片", null, "取消", null,
 //                            new String[]{"拍照", "从相册中选择"},
 //                            PhotoActivity.this, AlertView.Style.ActionSheet, new OnItemClickListener() {
