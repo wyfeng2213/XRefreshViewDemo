@@ -57,6 +57,8 @@ dependencies {
     compile 'cn.qqtheme.framework:WheelPicker:1.4.5'
     //图表
     compile 'com.github.lecho:hellocharts-android:v1.5.8'
+    // 侧边栏字母需要的
+    compile 'org.kymjs.kjframe:kjframe:2.4.6.2'
 
     compile project(':refreshlibrary')
     compile project(':calendarlibrary')

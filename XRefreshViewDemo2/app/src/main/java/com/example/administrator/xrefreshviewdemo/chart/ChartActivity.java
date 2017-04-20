@@ -1,4 +1,4 @@
-package com.example.administrator.xrefreshviewdemo.chat;
+package com.example.administrator.xrefreshviewdemo.chart;
 
 import android.content.Context;
 import android.content.Intent;

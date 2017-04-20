@@ -8,7 +8,10 @@ import android.widget.Button;
 import android.widget.LinearLayout;
 
 import com.example.administrator.xrefreshviewdemo.calendar.CanendarActivity;
-import com.example.administrator.xrefreshviewdemo.chat.ChartActivity;
+import com.example.administrator.xrefreshviewdemo.chart.ChartActivity;
+import com.example.administrator.xrefreshviewdemo.expandablelist.animalistview.AnimatedListViewTestActivity;
+import com.example.administrator.xrefreshviewdemo.headlistview.HeadListViewActivity;
+import com.example.administrator.xrefreshviewdemo.letter.ListviewLetterActivity;
 import com.example.administrator.xrefreshviewdemo.photo.PhotoActivity;
 import com.example.administrator.xrefreshviewdemo.refresh.RefreshActivity;
 import com.example.administrator.xrefreshviewdemo.switchbutton.SwitchButtonActivity;
@@ -39,6 +42,9 @@ public class MainActivity extends Activity implements View.OnClickListener {
     private Button bt_chat;
     private Button bt_zbar_qrcode;
     private Button bt_toolbar;
+    private Button bt_head_suspension;
+    private Button bt_expandable_listview;
+    private Button bt_letter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -78,49 +84,80 @@ public class MainActivity extends Activity implements View.OnClickListener {
         bt_zbar_qrcode.setOnClickListener(this);
         bt_toolbar = (Button) findViewById(R.id.bt_toolbar);
         bt_toolbar.setOnClickListener(this);
+        bt_head_suspension = (Button) findViewById(R.id.bt_head_suspension);
+        bt_head_suspension.setOnClickListener(this);
+        bt_expandable_listview = (Button) findViewById(R.id.bt_expandable_listview);
+        bt_expandable_listview.setOnClickListener(this);
+        bt_letter = (Button) findViewById(R.id.bt_letter);
+        bt_letter.setOnClickListener(this);
     }
 
     @Override
     public void onClick(View v) {
         switch (v.getId()) {
+            //下拉刷新
             case R.id.bt_refresh:
                 RefreshActivity.startActivity(this);
                 break;
+            //拍照和选择相册
             case R.id.bt_photo:
                 PhotoActivity.startActivity(this);
                 break;
+            //日历控件
             case R.id.bt_calendar:
                 CanendarActivity.startActivity(this);
                 break;
+            //zbar使用
             case R.id.bt_zbar_qrcode:
                 ZbarActivity.startActivity(this);
                 break;
+            //zxing使用
             case R.id.bt_zxing_qrcode:
                 ZxingActivity.startActivity(this);
                 break;
+            //滑动开关
             case R.id.bt_switch:
                 SwitchButtonActivity.startActivity(this);
                 break;
+            //tab滑动
             case R.id.bt_tab:
                 ScrollTabActivity.startActivity(this);
                 break;
+            //二维码生成
             case R.id.bt_zxing_create:
                 ZXingCreatePicActivity.startActivity(this);
                 break;
+            //滑动tab带下划线
             case R.id.bt_tab2:
                 MoreTab2Activity.startActivity(this);
                 break;
+            //带白色小点的滑动
             case R.id.bt_tab3:
                 GuideActivity.startActivity(this);
                 break;
+            //滚轮的滑动
             case R.id.bt_wheel:
                 WheelActivity.startActivity(this);
                 break;
+            //图表
             case R.id.bt_chat:
                 ChartActivity.startActivity(this);
                 break;
+            //bt_toolbar的使用
             case R.id.bt_toolbar:
                 ToolBarTestActivty2.startActivity(this);
+                break;
+            // listview 头部的悬浮
+            case R.id.bt_head_suspension:
+                HeadListViewActivity.startActivity(this);
+                break;
+            // 可折叠的listview
+            case R.id.bt_expandable_listview:
+                AnimatedListViewTestActivity.startActivity(this);
+                break;
+            // 侧面字母栏
+            case R.id.bt_letter:
+                ListviewLetterActivity.startActivity(this);
                 break;
         }
     }

@@ -1,4 +1,4 @@
-package com.example.administrator.xrefreshviewdemo.chat;
+package com.example.administrator.xrefreshviewdemo.chart;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;

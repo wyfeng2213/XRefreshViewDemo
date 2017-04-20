@@ -115,5 +115,29 @@
             android:layout_margin="10dp"
             android:padding="10dp"
             android:text="toolbar使用" />
+
+        <Button
+            android:id="@+id/bt_head_suspension"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:padding="10dp"
+            android:text="listview 头部悬浮" />
+
+        <Button
+            android:id="@+id/bt_expandable_listview"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:padding="10dp"
+            android:text="可折叠的ExpandableListView使用" />
+
+        <Button
+            android:id="@+id/bt_letter"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:padding="10dp"
+            android:text="侧边字母栏使用" />
     </LinearLayout>
 </ScrollView>
