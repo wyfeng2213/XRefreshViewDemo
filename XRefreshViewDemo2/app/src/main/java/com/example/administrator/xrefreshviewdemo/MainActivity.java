@@ -11,7 +11,7 @@ import com.example.administrator.xrefreshviewdemo.calendar.CanendarActivity;
 import com.example.administrator.xrefreshviewdemo.chart.ChartActivity;
 import com.example.administrator.xrefreshviewdemo.expandablelist.animalistview.AnimatedListViewTestActivity;
 import com.example.administrator.xrefreshviewdemo.headlistview.HeadListViewActivity;
-import com.example.administrator.xrefreshviewdemo.letter.ListviewLetterActivity;
+import com.example.administrator.xrefreshviewdemo.listviewletter.ListviewLetterActivity;
 import com.example.administrator.xrefreshviewdemo.listviewdelete.ListViewDelDemoActivity;
 import com.example.administrator.xrefreshviewdemo.photo.PhotoActivity;
 import com.example.administrator.xrefreshviewdemo.refresh.RefreshActivity;

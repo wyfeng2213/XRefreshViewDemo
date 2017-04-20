@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.example.administrator.xrefreshviewdemo.letter;
+package com.example.administrator.xrefreshviewdemo.listviewletter;
 
 import android.text.TextUtils;
 import android.util.Log;
