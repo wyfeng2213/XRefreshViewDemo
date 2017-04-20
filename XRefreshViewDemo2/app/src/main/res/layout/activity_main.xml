@@ -139,5 +139,13 @@
             android:layout_margin="10dp"
             android:padding="10dp"
             android:text="侧边字母栏使用" />
+
+        <Button
+            android:id="@+id/bt_listviewdel"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:padding="10dp"
+            android:text="listivew侧滑删除" />
     </LinearLayout>
 </ScrollView>

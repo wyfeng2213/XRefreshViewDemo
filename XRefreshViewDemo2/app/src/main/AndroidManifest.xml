@@ -35,6 +35,7 @@
         <activity android:name=".expandablelist.animalistview.AnimatedListViewTestActivity"></activity>
         <activity android:name=".letter.ListviewLetterActivity"></activity>
         <activity android:name=".headlistview.HeadListViewActivity"></activity>
+        <activity android:name=".listviewdelete.ListViewDelDemoActivity"></activity>
     </application>
 
 </manifest>

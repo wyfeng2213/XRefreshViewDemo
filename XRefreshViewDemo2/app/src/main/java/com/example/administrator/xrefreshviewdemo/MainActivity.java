@@ -12,6 +12,7 @@ import com.example.administrator.xrefreshviewdemo.chart.ChartActivity;
 import com.example.administrator.xrefreshviewdemo.expandablelist.animalistview.AnimatedListViewTestActivity;
 import com.example.administrator.xrefreshviewdemo.headlistview.HeadListViewActivity;
 import com.example.administrator.xrefreshviewdemo.letter.ListviewLetterActivity;
+import com.example.administrator.xrefreshviewdemo.listviewdelete.ListViewDelDemoActivity;
 import com.example.administrator.xrefreshviewdemo.photo.PhotoActivity;
 import com.example.administrator.xrefreshviewdemo.refresh.RefreshActivity;
 import com.example.administrator.xrefreshviewdemo.switchbutton.SwitchButtonActivity;
@@ -45,6 +46,7 @@ public class MainActivity extends Activity implements View.OnClickListener {
     private Button bt_head_suspension;
     private Button bt_expandable_listview;
     private Button bt_letter;
+    private Button bt_listviewdel;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -90,6 +92,8 @@ public class MainActivity extends Activity implements View.OnClickListener {
         bt_expandable_listview.setOnClickListener(this);
         bt_letter = (Button) findViewById(R.id.bt_letter);
         bt_letter.setOnClickListener(this);
+        bt_listviewdel = (Button) findViewById(R.id.bt_listviewdel);
+        bt_listviewdel.setOnClickListener(this);
     }
 
     @Override
@@ -158,6 +162,9 @@ public class MainActivity extends Activity implements View.OnClickListener {
             // 侧面字母栏
             case R.id.bt_letter:
                 ListviewLetterActivity.startActivity(this);
+                break;
+            case R.id.bt_listviewdel:
+                ListViewDelDemoActivity.startActivity(this);
                 break;
         }
     }
