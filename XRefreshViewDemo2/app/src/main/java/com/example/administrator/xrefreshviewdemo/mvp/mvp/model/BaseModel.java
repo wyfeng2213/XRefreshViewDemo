@@ -9,7 +9,7 @@ import com.wzgiceman.rxretrofitlibrary.retrofit_rx.listener.HttpOnNextListener;
  * Created by WZG on 2016/12/26.
  */
 
-public interface Mlistener {
+public interface BaseModel {
 
     /**
      * 开始任务

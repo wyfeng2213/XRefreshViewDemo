@@ -1,10 +1,10 @@
-package com.example.administrator.xrefreshviewdemo.mvp.entity.resulte;
+package com.example.administrator.xrefreshviewdemo.mvp.entity.result;
 
 /**
  * 测试显示数据
  * Created by WZG on 2016/7/16.
  */
-public class SubjectResulte {
+public class SubjectResult {
     private int id;
     private String name;
     private String title;

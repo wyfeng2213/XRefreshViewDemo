@@ -1,6 +1,6 @@
 package com.example.administrator.xrefreshviewdemo.mvp.mvp.presenter.impl;
 
-import com.example.administrator.xrefreshviewdemo.mvp.mvp.model.Mlistener;
+import com.example.administrator.xrefreshviewdemo.mvp.mvp.model.BaseModel;
 import com.example.administrator.xrefreshviewdemo.mvp.mvp.model.impl.TestModelImpl;
 import com.example.administrator.xrefreshviewdemo.mvp.mvp.presenter.Plistener;
 import com.example.administrator.xrefreshviewdemo.mvp.mvp.ui.Vlistener;
@@ -18,7 +18,7 @@ public class TestPresenterImpl implements Plistener {
 
     private Vlistener vlistener;
 
-    private Mlistener mlistener;
+    private BaseModel mlistener;
 
 
     public TestPresenterImpl(Vlistener viewListener) {
@@ -32,6 +32,7 @@ public class TestPresenterImpl implements Plistener {
             @Override
             public void onNext(String resulte, String mothead) {
                 vlistener.onNext(resulte, mothead);
+
             }
 
             @Override

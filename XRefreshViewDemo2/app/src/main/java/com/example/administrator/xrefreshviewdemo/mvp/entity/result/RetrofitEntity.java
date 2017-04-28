@@ -1,4 +1,4 @@
-package com.example.administrator.xrefreshviewdemo.mvp.entity.resulte;
+package com.example.administrator.xrefreshviewdemo.mvp.entity.result;
 
 import java.util.List;
 
@@ -9,7 +9,7 @@ import java.util.List;
 public class RetrofitEntity {
     private int ret;
     private String msg;
-    private List<SubjectResulte> data;
+    private List<SubjectResult> data;
 
     public int getRet() {
         return ret;
@@ -27,11 +27,11 @@ public class RetrofitEntity {
         this.msg = msg;
     }
 
-    public List<SubjectResulte> getData() {
+    public List<SubjectResult> getData() {
         return data;
     }
 
-    public void setData(List<SubjectResulte> data) {
+    public void setData(List<SubjectResult> data) {
         this.data = data;
     }
 }

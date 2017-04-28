@@ -33,7 +33,6 @@ dependencies {
     testCompile 'junit:junit:4.12'
     compile 'com.daimajia.numberprogressbar:library:1.2@aar'
     compile 'com.jude:easyrecyclerview:4.2.6'
-
     compile 'com.github.bumptech.glide:glide:3.6.1'
     //照片库
     compile 'com.jph.takephoto:takephoto_library:4.0.3'
@@ -68,4 +67,6 @@ dependencies {
     compile project(':calendarlibrary')
     compile project(':healthlibrary')
     compile project(':rxretrofitlibrary')
+    compile 'com.orhanobut:logger:1.15'
+    compile 'com.google.code.gson:gson:2.8.0'
 }

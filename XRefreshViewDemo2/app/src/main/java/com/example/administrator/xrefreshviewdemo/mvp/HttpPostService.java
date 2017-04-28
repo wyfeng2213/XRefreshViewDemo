@@ -16,4 +16,13 @@ public interface HttpPostService {
     @POST("AppFiftyToneGraph/videoLink")
     Observable<String> getAllVedioBy(@Field("once_no") boolean once_no);
 
+    /**
+     * 获取患者资料信息
+     *
+     * @return
+     */
+    @FormUrlEncoded
+    @POST("app/patientUser/select.action")
+    Observable<String> findPatient(@Field("patientPhone") String patientPhone, @Field("equipmentData") String equipmentData);
+
 }
