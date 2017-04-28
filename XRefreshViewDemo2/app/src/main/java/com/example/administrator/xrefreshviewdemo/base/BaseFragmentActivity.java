@@ -6,7 +6,7 @@ import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
 import android.view.Window;
 
-import com.example.administrator.xrefreshviewdemo.application.SystemApplication;
+import com.example.administrator.xrefreshviewdemo.application.MyApplication;
 
 
 /**
@@ -20,7 +20,7 @@ public abstract class BaseFragmentActivity extends FragmentActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         requestWindowFeature(Window.FEATURE_NO_TITLE);
-        SystemApplication.getInstance().addActivity(this);
+        MyApplication.getInstance().addActivity(this);
     }
 
 
@@ -48,6 +48,6 @@ public abstract class BaseFragmentActivity extends FragmentActivity {
     @Override
     protected void onDestroy() {
         super.onDestroy();
-        SystemApplication.getInstance().removeActivity(this);
+        MyApplication.getInstance().removeActivity(this);
     }
 }

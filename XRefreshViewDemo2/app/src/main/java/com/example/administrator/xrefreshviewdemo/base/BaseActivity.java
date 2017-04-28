@@ -6,7 +6,7 @@ import android.content.pm.ActivityInfo;
 import android.os.Bundle;
 import android.view.Window;
 
-import com.example.administrator.xrefreshviewdemo.application.SystemApplication;
+import com.example.administrator.xrefreshviewdemo.application.MyApplication;
 
 
 public abstract class BaseActivity extends Activity {
@@ -19,7 +19,7 @@ public abstract class BaseActivity extends Activity {
         requestWindowFeature(Window.FEATURE_NO_TITLE);
         mContext = this;
         TAG = this.getClass().getSimpleName();
-        SystemApplication.getInstance().addActivity(this);
+        MyApplication.getInstance().addActivity(this);
     }
 
     @Override
@@ -46,6 +46,6 @@ public abstract class BaseActivity extends Activity {
     @Override
     protected void onDestroy() {
         super.onDestroy();
-        SystemApplication.getInstance().removeActivity(this);
+        MyApplication.getInstance().removeActivity(this);
     }
 }

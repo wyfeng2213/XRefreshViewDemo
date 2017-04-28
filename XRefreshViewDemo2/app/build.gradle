@@ -31,6 +31,11 @@ dependencies {
         exclude group: 'com.android.support', module: 'support-annotations'
     })
     testCompile 'junit:junit:4.12'
+    compile 'com.daimajia.numberprogressbar:library:1.2@aar'
+    compile 'com.jude:easyrecyclerview:4.2.6'
+
+    compile 'com.github.bumptech.glide:glide:3.6.1'
+    //照片库
     compile 'com.jph.takephoto:takephoto_library:4.0.3'
     // 日历控件
     compile 'cn.carbs.android:IndicatorView:1.0.2'
@@ -46,14 +51,11 @@ dependencies {
     compile 'me.xiaopan:switchbutton:1.2.0'
     //viewpage滑动控件
     compile 'com.shizhefei:ViewPagerIndicator:1.1.5'
-
     //仿iOS的AlertViewController
     compile 'com.bigkoo:alertview:1.0.3'
     //图片放大
-//    compile 'com.github.githubwing:DragPhotoView:1.0.1'
+    //    compile 'com.github.githubwing:DragPhotoView:1.0.1'
     compile 'com.bm.photoview:library:1.4.1'
-
-
     compile 'cn.qqtheme.framework:WheelPicker:1.4.5'
     //图表
     compile 'com.github.lecho:hellocharts-android:v1.5.8'
@@ -62,8 +64,8 @@ dependencies {
     //侧滑删除
     compile 'com.github.mcxtzhang:SwipeDelMenuLayout:V1.2.5'
     compile 'com.github.mcxtzhang:all-base-adapter:V1.5.2'
-
     compile project(':refreshlibrary')
     compile project(':calendarlibrary')
     compile project(':healthlibrary')
+    compile project(':rxretrofitlibrary')
 }

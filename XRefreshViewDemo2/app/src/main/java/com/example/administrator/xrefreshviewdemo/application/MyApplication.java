@@ -3,6 +3,9 @@ package com.example.administrator.xrefreshviewdemo.application;
 import android.app.Activity;
 import android.app.Application;
 
+import com.example.administrator.xrefreshviewdemo.util.PreferencesUtils;
+import com.wzgiceman.rxretrofitlibrary.retrofit_rx.RxRetrofitApp;
+
 import java.util.Stack;
 
 /**
@@ -11,25 +14,27 @@ import java.util.Stack;
  * Author: wangyong
  */
 
-public class SystemApplication extends Application {
+public class MyApplication extends Application {
     private static Stack<Activity> mActivityStack;
-    private static SystemApplication sysApplication;
+    private static MyApplication myApp;
 
-    public static SystemApplication getInstance() {
-        if (sysApplication == null) {
-            sysApplication = new SystemApplication();
+    public static PreferencesUtils getPreferences() {
+        return preferencesUtils;
+    }
+
+    public static PreferencesUtils preferencesUtils;
+
+    public static MyApplication getInstance() {
+        if (myApp == null) {
+            myApp = new MyApplication();
         }
-        return sysApplication;
+        return myApp;
     }
 
     @Override
     public void onCreate() {
         super.onCreate();
-//        EaseUI.getInstance().init(this, null);
-        // 异常信息收集
-//        CrashHandlerUtil crashHandlerUtil = CrashHandlerUtil.getInstance();
-//        crashHandlerUtil.init(this);
-//        crashHandlerUtil.setCrashTip(getString(R.string.str_crash_tip));
+        RxRetrofitApp.init(this);
     }
 
 

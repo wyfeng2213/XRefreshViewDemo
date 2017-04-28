@@ -42,7 +42,7 @@ public class AnimatedListViewTestActivity extends Activity {
 
             item.title = "Group " + i;
 
-            for (int j = 0; j < i; j++) {
+            for (int j = 0; j < 10; j++) {
                 ChildItem child = new ChildItem();
                 child.title = "Awesome item " + j;
                 child.hint = "Too awesome";

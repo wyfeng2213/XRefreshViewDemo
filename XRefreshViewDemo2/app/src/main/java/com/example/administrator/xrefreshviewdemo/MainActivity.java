@@ -11,8 +11,9 @@ import com.example.administrator.xrefreshviewdemo.calendar.CanendarActivity;
 import com.example.administrator.xrefreshviewdemo.chart.ChartActivity;
 import com.example.administrator.xrefreshviewdemo.expandablelist.animalistview.AnimatedListViewTestActivity;
 import com.example.administrator.xrefreshviewdemo.headlistview.HeadListViewActivity;
-import com.example.administrator.xrefreshviewdemo.listviewletter.ListviewLetterActivity;
 import com.example.administrator.xrefreshviewdemo.listviewdelete.ListViewDelDemoActivity;
+import com.example.administrator.xrefreshviewdemo.listviewletter.ListviewLetterActivity;
+import com.example.administrator.xrefreshviewdemo.mvp.mvp.ui.MvpActivity;
 import com.example.administrator.xrefreshviewdemo.photo.PhotoActivity;
 import com.example.administrator.xrefreshviewdemo.refresh.RefreshActivity;
 import com.example.administrator.xrefreshviewdemo.switchbutton.SwitchButtonActivity;
@@ -47,6 +48,7 @@ public class MainActivity extends Activity implements View.OnClickListener {
     private Button bt_expandable_listview;
     private Button bt_letter;
     private Button bt_listviewdel;
+    private Button bt_mvp;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -94,6 +96,8 @@ public class MainActivity extends Activity implements View.OnClickListener {
         bt_letter.setOnClickListener(this);
         bt_listviewdel = (Button) findViewById(R.id.bt_listviewdel);
         bt_listviewdel.setOnClickListener(this);
+        bt_mvp = (Button) findViewById(R.id.bt_mvp);
+        bt_mvp.setOnClickListener(this);
     }
 
     @Override
@@ -158,6 +162,7 @@ public class MainActivity extends Activity implements View.OnClickListener {
             // 可折叠的listview
             case R.id.bt_expandable_listview:
                 AnimatedListViewTestActivity.startActivity(this);
+//                ExpandableListViewTestActivity.startActivity(this);
                 break;
             // 侧面字母栏
             case R.id.bt_letter:
@@ -165,6 +170,10 @@ public class MainActivity extends Activity implements View.OnClickListener {
                 break;
             case R.id.bt_listviewdel:
                 ListViewDelDemoActivity.startActivity(this);
+                break;
+            // 测试mvp 模式
+            case R.id.bt_mvp:
+                MvpActivity.startActivity(this);
                 break;
         }
     }

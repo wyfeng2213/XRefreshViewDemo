@@ -8,7 +8,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.example.administrator.xrefreshviewdemo.application.SystemApplication;
+import com.example.administrator.xrefreshviewdemo.application.MyApplication;
 
 
 /**
@@ -19,14 +19,14 @@ import com.example.administrator.xrefreshviewdemo.application.SystemApplication;
 
 public abstract class BaseFragment extends Fragment {
     protected String TAG;
-    protected SystemApplication mApp;
+    protected MyApplication mApp;
     protected View mContentView;
     protected Activity mActivity;
 
     public void onAttach(Activity activity) {
         super.onAttach(activity);
         TAG = this.getClass().getSimpleName();
-        mApp = SystemApplication.getInstance();
+        mApp = MyApplication.getInstance();
         mActivity = activity;
     }
 

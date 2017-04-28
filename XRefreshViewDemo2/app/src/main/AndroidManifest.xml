@@ -2,6 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.administrator.xrefreshviewdemo">
 
+    <uses-permission android:name="android.permission.INTERNET" />
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -36,6 +37,7 @@
         <activity android:name=".listviewletter.ListviewLetterActivity"></activity>
         <activity android:name=".headlistview.HeadListViewActivity"></activity>
         <activity android:name=".listviewdelete.ListViewDelDemoActivity"></activity>
+        <activity android:name=".mvp.mvp.ui.MvpActivity"></activity>
     </application>
 
 </manifest>

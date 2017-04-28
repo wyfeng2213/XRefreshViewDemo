@@ -147,5 +147,13 @@
             android:layout_margin="10dp"
             android:padding="10dp"
             android:text="listivew侧滑删除" />
+
+        <Button
+            android:id="@+id/bt_mvp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:padding="10dp"
+            android:text="mvp_retrofit+rxjava使用" />
     </LinearLayout>
 </ScrollView>

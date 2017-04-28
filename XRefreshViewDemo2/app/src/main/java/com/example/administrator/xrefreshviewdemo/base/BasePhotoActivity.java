@@ -5,7 +5,7 @@ import android.content.pm.ActivityInfo;
 import android.os.Bundle;
 import android.view.Window;
 
-import com.example.administrator.xrefreshviewdemo.application.SystemApplication;
+import com.example.administrator.xrefreshviewdemo.application.MyApplication;
 import com.jph.takephoto.app.TakePhotoActivity;
 
 /**
@@ -24,7 +24,7 @@ public abstract class BasePhotoActivity extends TakePhotoActivity {
         requestWindowFeature(Window.FEATURE_NO_TITLE);
         mContext = this;
         TAG = this.getClass().getSimpleName();
-        SystemApplication.getInstance().addActivity(this);
+        MyApplication.getInstance().addActivity(this);
     }
 
     @Override
@@ -51,6 +51,6 @@ public abstract class BasePhotoActivity extends TakePhotoActivity {
     @Override
     protected void onDestroy() {
         super.onDestroy();
-        SystemApplication.getInstance().removeActivity(this);
+        MyApplication.getInstance().removeActivity(this);
     }
 }
