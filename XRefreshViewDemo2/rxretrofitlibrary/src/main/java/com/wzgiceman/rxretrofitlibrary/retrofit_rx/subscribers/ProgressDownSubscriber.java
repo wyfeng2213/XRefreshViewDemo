@@ -108,7 +108,7 @@ public class ProgressDownSubscriber<T> extends Subscriber<T> implements Download
                         @Override
                         public void call(Long aLong) {
                       /*如果暂停或者停止状态延迟，不需要继续发送回调，影响显示*/
-                            if(downInfo.getState()==DownState.PAUSE||downInfo.getState()==DownState.STOP)return;
+                            if(downInfo.getState()== DownState.PAUSE||downInfo.getState()== DownState.STOP)return;
                             downInfo.setState(DownState.DOWN);
                             mSubscriberOnNextListener.get().updateProgress(aLong,downInfo.getCountLength());
                         }

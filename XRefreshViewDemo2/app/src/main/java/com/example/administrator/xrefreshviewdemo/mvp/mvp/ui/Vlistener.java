@@ -9,9 +9,6 @@ import com.wzgiceman.rxretrofitlibrary.retrofit_rx.exception.ApiException;
 public interface Vlistener {
 
 
-    void showProg();
-
-    void dismissProg();
 
     void onNext(String s, String m);
 

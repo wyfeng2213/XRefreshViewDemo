@@ -35,15 +35,6 @@ public class MvpActivity extends BaseActivity implements Vlistener, View.OnClick
         context.startActivity(starter);
     }
 
-    @Override
-    public void showProg() {
-        showP();
-    }
-
-    @Override
-    public void dismissProg() {
-        dismissP();
-    }
 
     @Override
     public void onNext(String s, String m) {
@@ -56,11 +47,6 @@ public class MvpActivity extends BaseActivity implements Vlistener, View.OnClick
     }
 
 
-    @Override
-    protected void onPause() {
-        super.onPause();
-        dismissProg();
-    }
 
     private void initView() {
         tv_test = (TextView) findViewById(R.id.tv_test);

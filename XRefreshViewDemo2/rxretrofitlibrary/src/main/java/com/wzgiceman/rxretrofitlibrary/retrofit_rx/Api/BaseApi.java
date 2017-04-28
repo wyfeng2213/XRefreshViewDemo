@@ -21,13 +21,44 @@ public abstract class BaseApi<T> implements Func1<T, String> {
     /*基础url*/
     private  String baseUrl="http://www.izaodao.com/Api/";
     /*方法-如果需要缓存必须设置这个参数；不需要不用設置*/
-    private String mothed;
+    private String method;
     /*超时时间-默认6秒*/
     private int connectionTime = 6;
     /*有网情况下的本地缓存时间默认60秒*/
     private int cookieNetWorkTime=60;
     /*无网络的情况下本地缓存时间默认30天*/
     private int cookieNoNetWorkTime=24*60*60*30;
+
+    public int getRetryCount() {
+        return retryCount;
+    }
+
+    public void setRetryCount(int retryCount) {
+        this.retryCount = retryCount;
+    }
+
+    public long getRetryDelay() {
+        return retryDelay;
+    }
+
+    public void setRetryDelay(long retryDelay) {
+        this.retryDelay = retryDelay;
+    }
+
+    public long getRetryIncreaseDelay() {
+        return retryIncreaseDelay;
+    }
+
+    public void setRetryIncreaseDelay(long retryIncreaseDelay) {
+        this.retryIncreaseDelay = retryIncreaseDelay;
+    }
+
+    /* retry次数*/
+    private int retryCount = 1;
+    /*retry延迟*/
+    private long retryDelay = 100;
+    /*retry叠加延迟*/
+    private long retryIncreaseDelay = 100;
 
     /**
      * 设置参数
@@ -55,8 +86,8 @@ public abstract class BaseApi<T> implements Func1<T, String> {
         this.cookieNetWorkTime = cookieNetWorkTime;
     }
 
-    public String getMothed() {
-        return mothed;
+    public String getMethod() {
+        return method;
     }
 
     public int getConnectionTime() {
@@ -67,8 +98,8 @@ public abstract class BaseApi<T> implements Func1<T, String> {
         this.connectionTime = connectionTime;
     }
 
-    public void setMothed(String mothed) {
-        this.mothed = mothed;
+    public void setMethod(String method) {
+        this.method = method;
     }
 
     public String getBaseUrl() {
@@ -80,7 +111,7 @@ public abstract class BaseApi<T> implements Func1<T, String> {
     }
 
     public String getUrl() {
-        return baseUrl+mothed;
+        return baseUrl+ method;
     }
 
     public boolean isCache() {

@@ -28,18 +28,15 @@ public class TestPresenterImpl implements Plistener {
 
     @Override
     public void startPost(RxAppCompatActivity rxAppCompatActivity, BaseApi baseApi) {
-        vlistener.showProg();
         HttpOnNextListener httpOnNextListener = new HttpOnNextListener() {
             @Override
             public void onNext(String resulte, String mothead) {
                 vlistener.onNext(resulte, mothead);
-                vlistener.dismissProg();
             }
 
             @Override
             public void onError(ApiException e) {
                 vlistener.onError(e);
-                vlistener.dismissProg();
             }
         };
         mlistener.startPost(httpOnNextListener, rxAppCompatActivity, baseApi);

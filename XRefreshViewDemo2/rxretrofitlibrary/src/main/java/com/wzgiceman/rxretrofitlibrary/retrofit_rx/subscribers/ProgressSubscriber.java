@@ -1,5 +1,10 @@
 package com.wzgiceman.rxretrofitlibrary.retrofit_rx.subscribers;
 
+
+import android.app.ProgressDialog;
+import android.content.Context;
+import android.content.DialogInterface;
+
 import com.wzgiceman.rxretrofitlibrary.retrofit_rx.Api.BaseApi;
 import com.wzgiceman.rxretrofitlibrary.retrofit_rx.RxRetrofitApp;
 import com.wzgiceman.rxretrofitlibrary.retrofit_rx.exception.ApiException;
@@ -14,17 +19,22 @@ import java.lang.ref.SoftReference;
 
 import rx.Observable;
 import rx.Subscriber;
-import rx.Subscription;
 
 /**
- *
- * 统一处理缓存-数据持久化
- * 异常回调
+ * 用于在Http请求开始时，自动显示一个ProgressDialog
+ * 在Http请求结束是，关闭ProgressDialog
+ * 调用者自己对请求数据进行处理
  * Created by WZG on 2016/7/16.
  */
-public class ProgressSubscriber<T> extends Subscriber<T> implements Subscription {
+public class ProgressSubscriber<T> extends Subscriber<T> {
+    /*是否弹框*/
+    private boolean showPorgress = true;
     //    回调接口
     private SoftReference<HttpOnNextListener> mSubscriberOnNextListener;
+    //    软引用反正内存泄露
+    private SoftReference<Context> mActivity;
+    //    加载框可自己定义
+    private ProgressDialog pd;
     /*请求数据*/
     private BaseApi api;
 
@@ -34,9 +44,59 @@ public class ProgressSubscriber<T> extends Subscriber<T> implements Subscription
      *
      * @param api
      */
-    public ProgressSubscriber(BaseApi api, SoftReference<HttpOnNextListener> listenerSoftReference) {
+    public ProgressSubscriber(BaseApi api, SoftReference<HttpOnNextListener> listenerSoftReference, SoftReference<Context>
+            mActivity) {
         this.api = api;
         this.mSubscriberOnNextListener = listenerSoftReference;
+        this.mActivity = mActivity;
+        setShowPorgress(api.isShowProgress());
+        if (api.isShowProgress()) {
+            initProgressDialog(api.isCancel());
+        }
+    }
+
+
+    /**
+     * 初始化加载框
+     */
+    private void initProgressDialog(boolean cancel) {
+        Context context = mActivity.get();
+        if (pd == null && context != null) {
+            pd = new ProgressDialog(context);
+            pd.setCancelable(cancel);
+            if (cancel) {
+                pd.setOnCancelListener(new DialogInterface.OnCancelListener() {
+                    @Override
+                    public void onCancel(DialogInterface dialogInterface) {
+                        onCancelProgress();
+                    }
+                });
+            }
+        }
+    }
+
+
+    /**
+     * 显示加载框
+     */
+    private void showProgressDialog() {
+        if (!isShowPorgress()) return;
+        Context context = mActivity.get();
+        if (pd == null || context == null) return;
+        if (!pd.isShowing()) {
+            pd.show();
+        }
+    }
+
+
+    /**
+     * 隐藏
+     */
+    private void dismissProgressDialog() {
+        if (!isShowPorgress()) return;
+        if (pd != null && pd.isShowing()) {
+            pd.dismiss();
+        }
     }
 
 
@@ -46,6 +106,7 @@ public class ProgressSubscriber<T> extends Subscriber<T> implements Subscription
      */
     @Override
     public void onStart() {
+        showProgressDialog();
         /*缓存并且有网*/
         if (api.isCache() && AppUtil.isNetworkAvailable(RxRetrofitApp.getApplication())) {
              /*获取缓存数据*/
@@ -54,7 +115,7 @@ public class ProgressSubscriber<T> extends Subscriber<T> implements Subscription
                 long time = (System.currentTimeMillis() - cookieResulte.getTime()) / 1000;
                 if (time < api.getCookieNetWorkTime()) {
                     if (mSubscriberOnNextListener.get() != null) {
-                        mSubscriberOnNextListener.get().onNext(cookieResulte.getResulte(), api.getMothed());
+                        mSubscriberOnNextListener.get().onNext(cookieResulte.getResulte(), api.getMethod());
                     }
                     onCompleted();
                     unsubscribe();
@@ -63,10 +124,12 @@ public class ProgressSubscriber<T> extends Subscriber<T> implements Subscription
         }
     }
 
-
+    /**
+     * 完成，隐藏ProgressDialog
+     */
     @Override
     public void onCompleted() {
-
+        dismissProgressDialog();
     }
 
     /**
@@ -83,6 +146,7 @@ public class ProgressSubscriber<T> extends Subscriber<T> implements Subscription
         } else {
             errorDo(e);
         }
+        dismissProgressDialog();
     }
 
     /**
@@ -110,7 +174,7 @@ public class ProgressSubscriber<T> extends Subscriber<T> implements Subscription
                 long time = (System.currentTimeMillis() - cookieResulte.getTime()) / 1000;
                 if (time < api.getCookieNoNetWorkTime()) {
                     if (mSubscriberOnNextListener.get() != null) {
-                        mSubscriberOnNextListener.get().onNext(cookieResulte.getResulte(), api.getMothed());
+                        mSubscriberOnNextListener.get().onNext(cookieResulte.getResulte(), api.getMethod());
                     }
                 } else {
                     CookieDbUtil.getInstance().deleteCookie(cookieResulte);
@@ -127,6 +191,8 @@ public class ProgressSubscriber<T> extends Subscriber<T> implements Subscription
      * @param e
      */
     private void errorDo(Throwable e) {
+        Context context = mActivity.get();
+        if (context == null) return;
         HttpOnNextListener httpOnNextListener = mSubscriberOnNextListener.get();
         if (httpOnNextListener == null) return;
         if (e instanceof ApiException) {
@@ -162,12 +228,32 @@ public class ProgressSubscriber<T> extends Subscriber<T> implements Subscription
             }
         }
         if (mSubscriberOnNextListener.get() != null) {
-            mSubscriberOnNextListener.get().onNext((String) t, api.getMothed());
+            mSubscriberOnNextListener.get().onNext((String) t, api.getMethod());
+        }
+    }
+
+
+    /**
+     * 取消ProgressDialog的时候，取消对observable的订阅，同时也取消了http请求
+     */
+    public void onCancelProgress() {
+        if (!this.isUnsubscribed()) {
+            this.unsubscribe();
         }
     }
 
 
 
+    public boolean isShowPorgress() {
+        return showPorgress;
+    }
 
-
+    /**
+     * 是否需要弹框设置
+     *
+     * @param showPorgress
+     */
+    public void setShowPorgress(boolean showPorgress) {
+        this.showPorgress = showPorgress;
+    }
 }
