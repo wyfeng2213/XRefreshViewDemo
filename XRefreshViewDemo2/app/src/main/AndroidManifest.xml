@@ -3,6 +3,7 @@
     package="com.example.administrator.xrefreshviewdemo">
 
     <uses-permission android:name="android.permission.INTERNET" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -30,14 +31,15 @@
         <!-- <activity android:name=".UI.RadioButtonActivity"></activity> -->
         <activity android:name=".wheelview.WheelActivity" />
         <activity android:name=".chart.ChartActivity" />
-        <activity android:name=".toolbar.ToolBarTestActivty"></activity>
-        <activity android:name=".toolbar.ToolBarTestActivty2"></activity>
-        <activity android:name=".expandablelist.normallistview.ExpandableListViewTestActivity"></activity>
-        <activity android:name=".expandablelist.animalistview.AnimatedListViewTestActivity"></activity>
-        <activity android:name=".listviewletter.ListviewLetterActivity"></activity>
-        <activity android:name=".headlistview.HeadListViewActivity"></activity>
-        <activity android:name=".listviewdelete.ListViewDelDemoActivity"></activity>
-        <activity android:name=".mvp.mvp.ui.MvpActivity"></activity>
+        <activity android:name=".toolbar.ToolBarTestActivty" />
+        <activity android:name=".toolbar.ToolBarTestActivty2" />
+        <activity android:name=".expandablelist.normallistview.ExpandableListViewTestActivity" />
+        <activity android:name=".expandablelist.animalistview.AnimatedListViewTestActivity" />
+        <activity android:name=".listviewletter.ListviewLetterActivity" />
+        <activity android:name=".headlistview.HeadListViewActivity" />
+        <activity android:name=".listviewdelete.ListViewDelDemoActivity" />
+        <activity android:name=".mvp.mvp.ui.MvpActivity" />
+        <activity android:name=".ormlite.OrmLiteActivity"></activity>
     </application>
 
 </manifest>

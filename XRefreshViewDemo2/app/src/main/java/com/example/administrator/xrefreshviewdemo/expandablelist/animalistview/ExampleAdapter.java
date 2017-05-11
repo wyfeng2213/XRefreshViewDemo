@@ -10,10 +10,15 @@ import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
+import com.cmcc.healthlibrary.utils.ToastUtil;
 import com.example.administrator.xrefreshviewdemo.R;
+import com.mcxtzhang.swipemenulib.SwipeMenuLayout;
 
 import java.util.List;
 
@@ -21,9 +26,11 @@ public class ExampleAdapter extends AnimatedExpandableListView.AnimatedExpandabl
     private LayoutInflater inflater;
 
     private List<GroupItem> items;
+    Context context;
 
     public ExampleAdapter(Context context) {
         inflater = LayoutInflater.from(context);
+        this.context = context;
     }
 
     public void setData(List<GroupItem> items) {
@@ -41,7 +48,7 @@ public class ExampleAdapter extends AnimatedExpandableListView.AnimatedExpandabl
     }
 
     @Override
-    public View getRealChildView(int groupPosition, int childPosition, boolean isLastChild, View convertView, ViewGroup parent) {
+    public View getRealChildView(final int groupPosition, final int childPosition, boolean isLastChild, View convertView, ViewGroup parent) {
         ChildHolder holder;
         ChildItem item = getChild(groupPosition, childPosition);
         if (convertView == null) {
@@ -53,7 +60,25 @@ public class ExampleAdapter extends AnimatedExpandableListView.AnimatedExpandabl
         } else {
             holder = (ChildHolder) convertView.getTag();
         }
-
+        final SwipeMenuLayout layout = (SwipeMenuLayout) convertView.findViewById(R.id.layout_huadong);
+        LinearLayout layout_content = (LinearLayout) convertView.findViewById(R.id.layout_content);
+        layout_content.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                ToastUtil.show(context, "点击了childPosition:" + childPosition);
+            }
+        });
+        Button btdel = (Button) convertView.findViewById(R.id.btnDelete);
+        btdel.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(context, "删除:" + childPosition, Toast.LENGTH_SHORT).show();
+                //在ListView里，点击侧滑菜单上的选项时，如果想让擦花菜单同时关闭，调用这句话
+                layout.quickClose();
+                items.get(groupPosition).items.remove(childPosition);
+                notifyDataSetChanged();
+            }
+        });
         holder.title.setText(item.title);
         holder.hint.setText(item.hint);
 

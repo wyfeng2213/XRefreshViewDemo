@@ -14,6 +14,7 @@ import com.example.administrator.xrefreshviewdemo.headlistview.HeadListViewActiv
 import com.example.administrator.xrefreshviewdemo.listviewdelete.ListViewDelDemoActivity;
 import com.example.administrator.xrefreshviewdemo.listviewletter.ListviewLetterActivity;
 import com.example.administrator.xrefreshviewdemo.mvp.mvp.ui.MvpActivity;
+import com.example.administrator.xrefreshviewdemo.ormlite.OrmLiteActivity;
 import com.example.administrator.xrefreshviewdemo.photo.PhotoActivity;
 import com.example.administrator.xrefreshviewdemo.refresh.RefreshActivity;
 import com.example.administrator.xrefreshviewdemo.switchbutton.SwitchButtonActivity;
@@ -49,6 +50,7 @@ public class MainActivity extends Activity implements View.OnClickListener {
     private Button bt_letter;
     private Button bt_listviewdel;
     private Button bt_mvp;
+    private Button bt_ormlite;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -98,6 +100,8 @@ public class MainActivity extends Activity implements View.OnClickListener {
         bt_listviewdel.setOnClickListener(this);
         bt_mvp = (Button) findViewById(R.id.bt_mvp);
         bt_mvp.setOnClickListener(this);
+        bt_ormlite = (Button) findViewById(R.id.bt_ormlite);
+        bt_ormlite.setOnClickListener(this);
     }
 
     @Override
@@ -174,6 +178,9 @@ public class MainActivity extends Activity implements View.OnClickListener {
             // 测试mvp 模式
             case R.id.bt_mvp:
                 MvpActivity.startActivity(this);
+                break;
+            case R.id.bt_ormlite:
+                OrmLiteActivity.startActivity(this);
                 break;
         }
     }

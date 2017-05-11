@@ -8,6 +8,7 @@ import android.view.View;
 import android.widget.ExpandableListView;
 import android.widget.ExpandableListView.OnGroupClickListener;
 
+import com.cmcc.healthlibrary.utils.ToastUtil;
 import com.example.administrator.xrefreshviewdemo.R;
 
 import java.util.ArrayList;
@@ -34,6 +35,10 @@ public class AnimatedListViewTestActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.anima_list);
 
+        initData();
+    }
+
+    private void initData() {
         List<GroupItem> items = new ArrayList<GroupItem>();
 
         // Populate our list with groups and it's children
@@ -67,8 +72,9 @@ public class AnimatedListViewTestActivity extends Activity {
             @Override
             public boolean onGroupClick(ExpandableListView parent, View v, int groupPosition, long id) {
                 // We call collapseGroupWithAnimation(int) and
-                // expandGroupWithAnimation(int) to animate group 
+                // expandGroupWithAnimation(int) to animate group
                 // expansion/collapse.
+                ToastUtil.show(AnimatedListViewTestActivity.this,"group点击了+"+groupPosition);
                 if (listView.isGroupExpanded(groupPosition)) {
                     listView.collapseGroupWithAnimation(groupPosition);
                 } else {
@@ -78,10 +84,15 @@ public class AnimatedListViewTestActivity extends Activity {
             }
 
         });
+
+        listView.setOnChildClickListener(new ExpandableListView.OnChildClickListener() {
+            @Override
+            public boolean onChildClick(ExpandableListView parent, View v, int groupPosition, int childPosition, long id) {
+                ToastUtil.show(AnimatedListViewTestActivity.this,"childPosition点击了:"+childPosition);
+                return false;
+            }
+        });
     }
-
-
-
 
 
 }
