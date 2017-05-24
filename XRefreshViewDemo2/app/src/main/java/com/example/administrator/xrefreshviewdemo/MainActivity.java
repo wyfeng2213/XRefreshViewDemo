@@ -13,6 +13,7 @@ import com.example.administrator.xrefreshviewdemo.expandablelist.animalistview.A
 import com.example.administrator.xrefreshviewdemo.headlistview.HeadListViewActivity;
 import com.example.administrator.xrefreshviewdemo.listviewdelete.ListViewDelDemoActivity;
 import com.example.administrator.xrefreshviewdemo.listviewletter.ListviewLetterActivity;
+import com.example.administrator.xrefreshviewdemo.mpAndroidChart.LineChatActivity;
 import com.example.administrator.xrefreshviewdemo.mvp.mvp.ui.MvpActivity;
 import com.example.administrator.xrefreshviewdemo.ormlite.OrmLiteActivity;
 import com.example.administrator.xrefreshviewdemo.photo.PhotoActivity;
@@ -51,6 +52,7 @@ public class MainActivity extends Activity implements View.OnClickListener {
     private Button bt_listviewdel;
     private Button bt_mvp;
     private Button bt_ormlite;
+    private Button bt_mpAndroidChart;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -102,6 +104,8 @@ public class MainActivity extends Activity implements View.OnClickListener {
         bt_mvp.setOnClickListener(this);
         bt_ormlite = (Button) findViewById(R.id.bt_ormlite);
         bt_ormlite.setOnClickListener(this);
+        bt_mpAndroidChart = (Button) findViewById(R.id.bt_mpAndroidChart);
+        bt_mpAndroidChart.setOnClickListener(this);
     }
 
     @Override
@@ -181,6 +185,9 @@ public class MainActivity extends Activity implements View.OnClickListener {
                 break;
             case R.id.bt_ormlite:
                 OrmLiteActivity.startActivity(this);
+                break;
+            case R.id.bt_mpAndroidChart:
+                LineChatActivity.startActivity(this);
                 break;
         }
     }

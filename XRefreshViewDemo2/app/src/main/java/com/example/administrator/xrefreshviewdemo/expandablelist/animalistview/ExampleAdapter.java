@@ -60,7 +60,7 @@ public class ExampleAdapter extends AnimatedExpandableListView.AnimatedExpandabl
         } else {
             holder = (ChildHolder) convertView.getTag();
         }
-        final SwipeMenuLayout layout = (SwipeMenuLayout) convertView.findViewById(R.id.layout_huadong);
+
         LinearLayout layout_content = (LinearLayout) convertView.findViewById(R.id.layout_content);
         layout_content.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -68,6 +68,7 @@ public class ExampleAdapter extends AnimatedExpandableListView.AnimatedExpandabl
                 ToastUtil.show(context, "点击了childPosition:" + childPosition);
             }
         });
+        final SwipeMenuLayout layout = (SwipeMenuLayout) convertView.findViewById(R.id.layout_huadong);
         Button btdel = (Button) convertView.findViewById(R.id.btnDelete);
         btdel.setOnClickListener(new View.OnClickListener() {
             @Override

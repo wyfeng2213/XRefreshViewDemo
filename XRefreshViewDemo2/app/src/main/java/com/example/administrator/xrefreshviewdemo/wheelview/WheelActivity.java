@@ -16,6 +16,9 @@ import cn.qqtheme.framework.picker.DatePicker;
 import cn.qqtheme.framework.picker.TimePicker;
 import cn.qqtheme.framework.widget.WheelView;
 
+/**
+ * https://github.com/gzu-liyujiang/AndroidPicker
+ */
 public class WheelActivity extends Activity {
 
 

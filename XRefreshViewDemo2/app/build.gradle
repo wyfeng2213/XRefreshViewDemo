@@ -69,6 +69,9 @@ dependencies {
     //侧滑删除
     compile 'com.github.mcxtzhang:SwipeDelMenuLayout:V1.2.5'
     compile 'com.github.mcxtzhang:all-base-adapter:V1.5.2'
+
+    // mpAndroidChart
+    compile 'com.github.PhilJay:MPAndroidChart:v3.0.2'
     compile project(':refreshlibrary')
     compile project(':calendarlibrary')
     compile project(':healthlibrary')

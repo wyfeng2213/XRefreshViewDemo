@@ -34,12 +34,12 @@
 
     <!-- 以下都是侧滑菜单的内容依序排列 -->
     <Button
-        android:id="@+id/btnTop"
-        android:layout_width="60dp"
-        android:layout_height="match_parent"
-        android:background="#d9dee4"
-        android:text="置顶"
-        android:textColor="@android:color/white" />
+    android:id="@+id/btnTop"
+    android:layout_width="60dp"
+    android:layout_height="match_parent"
+    android:background="#d9dee4"
+    android:text="置顶"
+    android:textColor="@android:color/white" />
 
     <Button
         android:id="@+id/btnUnRead"

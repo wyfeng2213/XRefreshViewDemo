@@ -40,6 +40,7 @@
         <activity android:name=".listviewdelete.ListViewDelDemoActivity" />
         <activity android:name=".mvp.mvp.ui.MvpActivity" />
         <activity android:name=".ormlite.OrmLiteActivity"></activity>
+        <activity android:name=".mpAndroidChart.LineChatActivity"></activity>
     </application>
 
 </manifest>
