@@ -41,5 +41,9 @@
     <color name="colorPrimaryDarkTrans">#CCf57257</color>
 
     <color name="image_color">#f6f6f6</color>
+
+    <color name="line_color1">#A78bf9</color>
+    <color name="line_color2">#6c9ff1</color>
+    <color name="line_color3">#c5f073</color>
 </resources>
 
