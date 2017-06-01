@@ -176,6 +176,7 @@ public class MainActivity extends Activity implements View.OnClickListener {
             case R.id.bt_letter:
                 ListviewLetterActivity.startActivity(this);
                 break;
+            //侧滑删除
             case R.id.bt_listviewdel:
                 ListViewDelDemoActivity.startActivity(this);
                 break;
@@ -183,9 +184,11 @@ public class MainActivity extends Activity implements View.OnClickListener {
             case R.id.bt_mvp:
                 MvpActivity.startActivity(this);
                 break;
+            //ormlite 使用
             case R.id.bt_ormlite:
                 OrmLiteActivity.startActivity(this);
                 break;
+            //MPAndroidChart 的使用
             case R.id.bt_mpAndroidChart:
                 LineChatActivity.startActivity(this);
                 break;

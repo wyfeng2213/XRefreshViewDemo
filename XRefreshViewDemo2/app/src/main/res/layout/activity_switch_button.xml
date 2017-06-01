@@ -6,6 +6,11 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
+    <!--withTextInterval：标题文字和按钮之间的距离-->
+    <!--frameDrawable：框架图片，定义按钮的大小以及显示区域-->
+    <!--stateDrawable：状态图片，显示开启或关闭-->
+    <!--stateMaskDrawable：状态图片遮罩层-->
+    <!--sliderDrawable：滑块图片-->
     <me.xiaopan.switchbutton.SwitchButton
         android:id="@+id/bt_switch"
         android:layout_width="wrap_content"
@@ -19,5 +24,29 @@
         app:stateDrawable="@drawable/switch_state"
         app:stateMaskDrawable="@drawable/switch_state_mask"
         app:withTextInterval="16dp" />
+
+    <com.kyleduo.switchbutton.SwitchButton
+        android:id="@+id/sb_text"
+        style="@style/SwitchButtonStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="#FFFFFF"
+        android:textSize="16dp"
+        app:kswTextOff="Off"
+        app:kswTextOn="On" />
+
+    <com.kyleduo.switchbutton.SwitchButton
+        android:id="@+id/sb_ios"
+        style="@style/SwitchButtonStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:kswAnimationDuration="200"
+        app:kswBackDrawable="@drawable/ios_back_drawable"
+        app:kswBackMeasureRatio="1.4"
+        app:kswThumbDrawable="@drawable/ios_thumb_selector"
+        app:kswThumbMarginBottom="-8dp"
+        app:kswThumbMarginLeft="-5dp"
+        app:kswThumbMarginRight="-5dp"
+        app:kswThumbMarginTop="-2.5dp" />
 
 </LinearLayout>
