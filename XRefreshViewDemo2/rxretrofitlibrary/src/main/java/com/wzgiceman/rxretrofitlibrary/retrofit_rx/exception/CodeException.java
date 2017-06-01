@@ -28,8 +28,11 @@ public class CodeException {
     /*无法解析该域名*/
     public static final int UNKOWNHOST_ERROR = 0x6;
 
+    public static final int NO_DATA = 404;
 
-    @IntDef({NETWORD_ERROR, HTTP_ERROR, RUNTIME_ERROR, UNKNOWN_ERROR, JSON_ERROR, UNKOWNHOST_ERROR})
+
+
+    @IntDef({NETWORD_ERROR, HTTP_ERROR, RUNTIME_ERROR, UNKNOWN_ERROR, JSON_ERROR, UNKOWNHOST_ERROR,NO_DATA})
     @Retention(RetentionPolicy.SOURCE)
 
     public @interface CodeEp {

@@ -13,21 +13,21 @@ import rx.functions.Func1;
  */
 public abstract class BaseApi<T> implements Func1<T, String> {
     /*是否能取消加载框*/
-    private boolean cancel=false;
+    private boolean cancel = false;
     /*是否显示加载框*/
-    private boolean showProgress=true;
+    private boolean showProgress = true;
     /*是否需要缓存处理*/
-    private boolean cache=false;
+    private boolean cache = false;
     /*基础url*/
-    private  String baseUrl="http://www.izaodao.com/Api/";
+    private String baseUrl = "http://10.1.2.166:8080/medicalcare/";
     /*方法-如果需要缓存必须设置这个参数；不需要不用設置*/
     private String method;
     /*超时时间-默认6秒*/
     private int connectionTime = 6;
     /*有网情况下的本地缓存时间默认60秒*/
-    private int cookieNetWorkTime=60;
+    private int cookieNetWorkTime = 60;
     /*无网络的情况下本地缓存时间默认30天*/
-    private int cookieNoNetWorkTime=24*60*60*30;
+    private int cookieNoNetWorkTime = 24 * 60 * 60 * 30;
 
     public int getRetryCount() {
         return retryCount;
@@ -67,7 +67,6 @@ public abstract class BaseApi<T> implements Func1<T, String> {
      * @return
      */
     public abstract Observable getObservable(Retrofit retrofit);
-
 
 
     public int getCookieNoNetWorkTime() {
@@ -111,7 +110,7 @@ public abstract class BaseApi<T> implements Func1<T, String> {
     }
 
     public String getUrl() {
-        return baseUrl+ method;
+        return baseUrl + method;
     }
 
     public boolean isCache() {
@@ -131,18 +130,19 @@ public abstract class BaseApi<T> implements Func1<T, String> {
     }
 
     public boolean isCancel() {
-         return cancel;
-     }
+        return cancel;
+    }
 
-     public void setCancel(boolean cancel) {
-         this.cancel = cancel;
-     }
+    public void setCancel(boolean cancel) {
+        this.cancel = cancel;
+    }
 
     @Override
     public String call(T httpResult) {
-        BaseResultEntity baseResulte= JSONObject.parseObject(httpResult.toString(),BaseResultEntity.class);
-        if (baseResulte.getRet() == 0) {
-            throw new HttpTimeException(baseResulte.getMsg());
+        BaseResultEntity baseResulte = JSONObject.parseObject(httpResult.toString(), BaseResultEntity.class);
+        if (baseResulte.getCode() != 200) {
+            // 不为200的情况
+            throw new HttpTimeException(baseResulte.getCode(), baseResulte.getMessage());
         }
         return baseResulte.getData();
     }

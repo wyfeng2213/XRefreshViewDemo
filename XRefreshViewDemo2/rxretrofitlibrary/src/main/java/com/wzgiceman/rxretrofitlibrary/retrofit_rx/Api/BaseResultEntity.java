@@ -6,18 +6,18 @@ package com.wzgiceman.rxretrofitlibrary.retrofit_rx.Api;
  */
 public class BaseResultEntity {
     //  判断标示
-    private int ret;
+    private int code;
     //    提示信息
-    private String msg;
+    private String message;
     //显示数据（用户需要关心的数据）
     private String data;
 
-    public String getMsg() {
-        return msg;
+    public String getMessage() {
+        return message;
     }
 
-    public void setMsg(String msg) {
-        this.msg = msg;
+    public void setMessage(String message) {
+        this.message = message;
     }
 
     public String getData() {
@@ -28,11 +28,11 @@ public class BaseResultEntity {
         this.data = data;
     }
 
-    public int getRet() {
-        return ret;
+    public int getCode() {
+        return code;
     }
 
-    public void setRet(int ret) {
-        this.ret = ret;
+    public void setCode(int code) {
+        this.code = code;
     }
 }

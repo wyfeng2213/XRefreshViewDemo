@@ -18,8 +18,8 @@ import retrofit2.adapter.rxjava.HttpException;
 
 public class FactoryException {
     private static final String HttpException_MSG = "网络错误";
-    private static final String ConnectException_MSG = "连接失败";
-    private static final String JSONException_MSG = "fastjeson解析失败";
+    private static final String ConnectException_MSG = "网络连接失败";
+    private static final String JSONException_MSG = "数据解析失败";
     private static final String UnknownHostException_MSG = "无法解析该域名";
 
     /**

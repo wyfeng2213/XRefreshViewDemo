@@ -4,6 +4,7 @@ package com.wzgiceman.rxretrofitlibrary.retrofit_rx.subscribers;
 import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.DialogInterface;
+import android.widget.Toast;
 
 import com.wzgiceman.rxretrofitlibrary.retrofit_rx.Api.BaseApi;
 import com.wzgiceman.rxretrofitlibrary.retrofit_rx.RxRetrofitApp;
@@ -196,10 +197,35 @@ public class ProgressSubscriber<T> extends Subscriber<T> {
         HttpOnNextListener httpOnNextListener = mSubscriberOnNextListener.get();
         if (httpOnNextListener == null) return;
         if (e instanceof ApiException) {
-            httpOnNextListener.onError((ApiException) e);
-        } else if (e instanceof HttpTimeException) {
+            ApiException exception = (ApiException) e;
+            switch (exception.getCode()) {
+                case CodeException.HTTP_ERROR:
+                    Toast.makeText(context, exception.getDisplayMessage(), Toast.LENGTH_SHORT).show();
+                    break;
+//                case CodeException.RUNTIME_ERROR:
+//                    Toast.makeText(context, exception.getDisplayMessage(), Toast.LENGTH_SHORT).show();
+//                    break;
+                case CodeException.JSON_ERROR:
+                    Toast.makeText(context, exception.getDisplayMessage(), Toast.LENGTH_SHORT).show();
+                    break;
+                case CodeException.UNKOWNHOST_ERROR:
+                    Toast.makeText(context, exception.getDisplayMessage(), Toast.LENGTH_SHORT).show();
+                    break;
+                default:
+                    if (exception.getCode() != CodeException.NO_DATA) {
+                        Toast.makeText(context, exception.getDisplayMessage(), Toast.LENGTH_SHORT).show();
+                    }
+                    httpOnNextListener.onError(exception);
+            }
+
+        } else if (e instanceof HttpTimeException) { // 自定义异常
             HttpTimeException exception = (HttpTimeException) e;
+            if (exception.getResultCode() != CodeException.NO_DATA) {
+                Toast.makeText(context, exception.getDetailMessage(), Toast.LENGTH_SHORT).show();
+            }
+            // 调用错误的回调方法
             httpOnNextListener.onError(new ApiException(exception, CodeException.RUNTIME_ERROR, exception.getMessage()));
+
         } else {
             httpOnNextListener.onError(new ApiException(e, CodeException.UNKNOWN_ERROR, e.getMessage()));
         }
@@ -241,7 +267,6 @@ public class ProgressSubscriber<T> extends Subscriber<T> {
             this.unsubscribe();
         }
     }
-
 
 
     public boolean isShowPorgress() {

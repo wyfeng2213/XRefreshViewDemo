@@ -5,7 +5,13 @@ package com.wzgiceman.rxretrofitlibrary.retrofit_rx.exception;
  * Created by WZG on 2016/12/12.
  */
 
-public class ApiException extends Exception{
+public class ApiException extends Exception {
+
+    public ApiException(int code, String displayMessage) {
+        this.code = code;
+        this.displayMessage = displayMessage;
+    }
+
     /*错误码*/
     private int code;
     /*显示的信息*/
@@ -15,7 +21,7 @@ public class ApiException extends Exception{
         super(e);
     }
 
-    public ApiException(Throwable cause,@CodeException.CodeEp int code, String showMsg) {
+    public ApiException(Throwable cause, @CodeException.CodeEp int code, String showMsg) {
         super(showMsg, cause);
         setCode(code);
         setDisplayMessage(showMsg);

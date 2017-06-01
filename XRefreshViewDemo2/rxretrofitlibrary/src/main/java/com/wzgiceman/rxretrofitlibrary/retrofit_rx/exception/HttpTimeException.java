@@ -13,6 +13,29 @@ public class HttpTimeException extends RuntimeException {
     /*缓存过时错误*/
     public static final int CHACHE_TIMEOUT_ERROR = 0x1004;
 
+    public HttpTimeException(int resultCode, String detailMessage) {
+        this.resultCode = resultCode;
+        this.detailMessage = detailMessage;
+    }
+
+    public int getResultCode() {
+        return resultCode;
+    }
+
+    public void setResultCode(int resultCode) {
+        this.resultCode = resultCode;
+    }
+
+    public String getDetailMessage() {
+        return detailMessage;
+    }
+
+    public void setDetailMessage(String detailMessage) {
+        this.detailMessage = detailMessage;
+    }
+
+    int resultCode;
+    String detailMessage;
 
     public HttpTimeException(int resultCode) {
         super(getApiExceptionMessage(resultCode));
