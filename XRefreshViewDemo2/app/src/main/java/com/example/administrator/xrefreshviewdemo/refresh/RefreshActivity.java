@@ -21,7 +21,9 @@ import java.util.List;
 import static com.example.administrator.xrefreshviewdemo.R.id.custom_view;
 import static com.example.administrator.xrefreshviewdemo.R.id.lv;
 
-
+/**
+ * https://github.com/huxq17/XRefreshView
+ */
 public class RefreshActivity extends AppCompatActivity {
 
     private ListView listview;
