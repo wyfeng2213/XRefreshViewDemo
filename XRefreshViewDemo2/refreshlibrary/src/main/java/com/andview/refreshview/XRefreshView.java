@@ -83,7 +83,7 @@ public class XRefreshView extends LinearLayout {
     /**
      * 当刷新完成以后，headerview和footerview被固定的时间，在这个时间以后headerview才会回弹
      */
-    private int mPinnedTime;
+    private int mPinnedTime = 1000;
     private XRefreshViewState mState = null;
     /**
      * 当已无更多数据时候，需把这个变量设为true
@@ -922,6 +922,29 @@ public class XRefreshView extends LinearLayout {
         mContentView.stopLoading(hideFooter);
     }
 
+    private void completeLoadMore(final boolean hideFooter, final int scrollBackDuration) {
+        if (needAddFooterView()) {
+            if (mPullLoading) {
+                mStopingRefresh = true;
+                mState = XRefreshViewState.STATE_COMPLETE;
+                mFooterCallBack.onStateComplete();
+                if (mPinnedTime >= 1000) {// 在加载更多完成以后，只有mPinnedTime大于1s才生效，不然效果不好
+                    postDelayed(new Runnable() {
+
+                        @Override
+                        public void run() {
+                            endLoadMore(hideFooter, scrollBackDuration);
+                        }
+                    }, mPinnedTime);
+                } else {
+                    endLoadMore(hideFooter, scrollBackDuration);
+                }
+            }
+        }
+
+        mContentView.stopLoading(hideFooter);
+    }
+
     private void scrollback(int offset) {
         View child = mContentView.getContentView();
         if (child instanceof AbsListView) {
@@ -949,7 +972,8 @@ public class XRefreshView extends LinearLayout {
     public void setLoadComplete(boolean hasComplete) {
         mHasLoadComplete = hasComplete;
         if (needAddFooterView()) {
-            stopLoadMore(true);
+//            stopLoadMore(true);
+            completeLoadMore(hasComplete, 300);
             if (!hasComplete && mEnablePullLoad && mFooterCallBack != null) {
                 mFooterCallBack.onStateRefreshing();
 //                mFooterCallBack.show(true);

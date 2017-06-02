@@ -43,6 +43,8 @@ public class RefreshActivity extends AppCompatActivity {
         context.startActivity(starter);
     }
 
+    int count = 0;
+
     private void initView() {
         listview = (ListView) findViewById(lv);
         refreshView = (XRefreshView) findViewById(custom_view);
@@ -75,19 +77,26 @@ public class RefreshActivity extends AppCompatActivity {
                     @Override
                     public void run() {
 
-                        RefreshActivity.this.runOnUiThread(new Runnable() {
-                            @Override
-                            public void run() {
-                                List<String> mylist = new ArrayList<String>();
-                                for (int i = 0; i < 10; i++) {
-                                    mylist.add("i" + i);
+                        count++;
+                        if (count >= 2) {
+                            refreshView.setLoadComplete(true); //加载完成 无数据的时候
+                        } else {
+                            refreshView.stopLoadMore();
+                            //refreshView.stopLoadMore(false); 请求失败的情况
+                            RefreshActivity.this.runOnUiThread(new Runnable() {
+                                @Override
+                                public void run() {
+                                    List<String> mylist = new ArrayList<String>();
+                                    for (int i = 0; i < 10; i++) {
+                                        mylist.add("i" + i);
+                                    }
+                                    mAdapter.addItems(mylist);
                                 }
-                                mAdapter.addItems(mylist);
-                            }
-                        });
-                        refreshView.stopLoadMore();
+                            });
+
+                        }
                     }
-                }, 2000);
+                }, 200);
             }
 
             @Override
