@@ -171,5 +171,13 @@
             android:layout_margin="10dp"
             android:padding="10dp"
             android:text="MPAndroidChart的使用" />
+
+        <Button
+            android:id="@+id/bt_loading"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:padding="10dp"
+            android:text="loading的使用" />
     </LinearLayout>
 </ScrollView>

@@ -42,6 +42,27 @@ public class PhotoActivity extends TakePhotoActivity implements View.OnClickList
 
     }
 
+//    ImageView imageView = viewHolder.findViewById(R.id.photo_image);
+//    if (position == countImage) { //当超过最大的个数隐藏最后一个Imageview
+//        imageView.setVisibility(View.GONE);
+//    } else {
+//        if (position == filePathList.size() - 1) {
+//            //最后一个现实+号
+//            ImageUtils.Loader(mContext, R.mipmap.img_add, imageView, ImageUtils.LOAD_ROUND);
+//        } else {
+//            ImageUtils.Loader(mContext, item, imageView, ImageUtils.LOAD_ROUND);
+//        }
+//    }
+    // 设置RecyclerView的点击事件
+//    adapter.setOnItemClickListener(new RecyclerAdapter.OnItemClickListener() {
+//        @Override
+//        public void onItemClick(int position) {
+//            if (position == filePathList.size() - 1) {
+//                showPop();
+//            }
+//        }
+//    });
+
     private void initRecylerView() {
         //设置RecyclerView
         recyclerView = (RecyclerView) findViewById(R.id.recyclerView);

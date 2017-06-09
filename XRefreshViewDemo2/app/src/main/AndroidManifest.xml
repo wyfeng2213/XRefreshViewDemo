@@ -39,8 +39,9 @@
         <activity android:name=".headlistview.HeadListViewActivity" />
         <activity android:name=".listviewdelete.ListViewDelDemoActivity" />
         <activity android:name=".mvp.mvp.ui.MvpActivity" />
-        <activity android:name=".ormlite.OrmLiteActivity"></activity>
-        <activity android:name=".mpAndroidChart.LineChatActivity"></activity>
+        <activity android:name=".ormlite.OrmLiteActivity" />
+        <activity android:name=".mpAndroidChart.LineChatActivity" />
+        <activity android:name=".loading.LoadingActivity"></activity>
     </application>
 
 </manifest>

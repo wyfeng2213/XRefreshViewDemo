@@ -80,7 +80,7 @@ public class RefreshActivity extends AppCompatActivity {
                     public void run() {
 
                         count++;
-                        if (count >= 2) {
+                        if (count >= 5) {
                             refreshView.setLoadComplete(true); //加载完成 无数据的时候
                         } else {
                             refreshView.stopLoadMore();
@@ -98,7 +98,7 @@ public class RefreshActivity extends AppCompatActivity {
 
                         }
                     }
-                }, 200);
+                }, 2000);
             }
 
             @Override
