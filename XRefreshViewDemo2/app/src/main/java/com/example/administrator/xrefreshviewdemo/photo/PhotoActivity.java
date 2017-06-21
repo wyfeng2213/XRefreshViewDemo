@@ -36,32 +36,25 @@ public class PhotoActivity extends TakePhotoActivity implements View.OnClickList
         customHelper = CustomHelper.of(contentView);
         mcontext = this;
         initView();
-
         initRecylerView();
-
-
     }
 
-//    ImageView imageView = viewHolder.findViewById(R.id.photo_image);
-//    if (position == countImage) { //当超过最大的个数隐藏最后一个Imageview
-//        imageView.setVisibility(View.GONE);
-//    } else {
-//        if (position == filePathList.size() - 1) {
-//            //最后一个现实+号
-//            ImageUtils.Loader(mContext, R.mipmap.img_add, imageView, ImageUtils.LOAD_ROUND);
-//        } else {
-//            ImageUtils.Loader(mContext, item, imageView, ImageUtils.LOAD_ROUND);
-//        }
-//    }
-    // 设置RecyclerView的点击事件
-//    adapter.setOnItemClickListener(new RecyclerAdapter.OnItemClickListener() {
-//        @Override
-//        public void onItemClick(int position) {
-//            if (position == filePathList.size() - 1) {
-//                showPop();
-//            }
-//        }
-//    });
+    public static void startActivity(Context context) {
+        Intent starter = new Intent(context, PhotoActivity.class);
+        context.startActivity(starter);
+    }
+
+    private void initView() {
+        btnPickBySelect = (Button) findViewById(R.id.btnPickBySelect);
+        btnPickByTake = (Button) findViewById(R.id.btnPickByTake);
+
+        btnPickBySelect.setOnClickListener(this);
+        btnPickByTake.setOnClickListener(this);
+        btnPickBySelect = (Button) findViewById(R.id.btnPickBySelect);
+        btnPickBySelect.setOnClickListener(this);
+        btnPickByTake = (Button) findViewById(R.id.btnPickByTake);
+        btnPickByTake.setOnClickListener(this);
+    }
 
     private void initRecylerView() {
         //设置RecyclerView
@@ -79,30 +72,6 @@ public class PhotoActivity extends TakePhotoActivity implements View.OnClickList
             switch (type) {
                 case 0:
                     customHelper.onClick(CustomHelper.SELECT_PHOTO, getTakePhoto());
-//                    new AlertView("上传图片", null, "取消", null,
-//                            new String[]{"拍照", "从相册中选择"},
-//                            PhotoActivity.this, AlertView.Style.ActionSheet, new OnItemClickListener() {
-//                        @Override
-//                        public void onItemClick(Object o, int position) {
-//                            TakePhoto takePhoto = getTakePhoto();
-//                            //获取TakePhoto图片路径
-//                            File file = new File(Environment.getExternalStorageDirectory(), "/photo/" + System.currentTimeMillis() + ".jpg");
-//                            if (!file.getParentFile().exists()) file.getParentFile().mkdirs();
-//                            Uri imageUri = Uri.fromFile(file);
-//
-//                            configCompress(takePhoto);
-//                            configTakePhotoOption(takePhoto);
-//                            switch (position) {
-//                                case 0:
-//                                    takePhoto.onPickFromCapture(imageUri);
-//                                    break;
-//                                case 1:
-//                                    //设置最多几张
-//                                    takePhoto.onPickMultiple(3);
-//                                    break;
-//                            }
-//                        }
-//                    }).show();
                     break;
                 case 1:
                     // 删除图片
@@ -122,7 +91,6 @@ public class PhotoActivity extends TakePhotoActivity implements View.OnClickList
         }
     };
 
-
     @Override
     public void takeCancel() {
         super.takeCancel();
@@ -141,10 +109,6 @@ public class PhotoActivity extends TakePhotoActivity implements View.OnClickList
     }
 
     private void showImg(ArrayList<TImage> images) {
-//        Intent intent = new Intent(this, ResultActivity.class);
-//        intent.putExtra("images", images);
-//        startActivity(intent);
-
         for (int i = 0; i < images.size(); i++) {
             if (images.get(i).getCompressPath() != null) {
                 selectMedia.add(images.get(i));
@@ -156,22 +120,6 @@ public class PhotoActivity extends TakePhotoActivity implements View.OnClickList
         }
     }
 
-    public static void startActivity(Context context) {
-        Intent starter = new Intent(context, PhotoActivity.class);
-        context.startActivity(starter);
-    }
-
-    private void initView() {
-        btnPickBySelect = (Button) findViewById(R.id.btnPickBySelect);
-        btnPickByTake = (Button) findViewById(R.id.btnPickByTake);
-
-        btnPickBySelect.setOnClickListener(this);
-        btnPickByTake.setOnClickListener(this);
-        btnPickBySelect = (Button) findViewById(R.id.btnPickBySelect);
-        btnPickBySelect.setOnClickListener(this);
-        btnPickByTake = (Button) findViewById(R.id.btnPickByTake);
-        btnPickByTake.setOnClickListener(this);
-    }
 
     @Override
     public void onClick(View v) {

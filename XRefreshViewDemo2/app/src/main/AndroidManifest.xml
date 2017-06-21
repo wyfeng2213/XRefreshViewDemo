@@ -19,6 +19,7 @@
         </activity>
         <activity android:name=".refresh.RefreshActivity" />
         <activity android:name=".photo.PhotoActivity" />
+        <activity android:name=".photo.PhotoActivity2" />
         <activity android:name=".photo.ResultActivity" />
         <activity android:name=".calendar.CanendarActivity" />
         <activity android:name=".zbar.ZbarActivity" />
@@ -41,7 +42,8 @@
         <activity android:name=".mvp.mvp.ui.MvpActivity" />
         <activity android:name=".ormlite.OrmLiteActivity" />
         <activity android:name=".mpAndroidChart.LineChatActivity" />
-        <activity android:name=".loading.LoadingActivity"></activity>
+        <activity android:name=".loading.LoadingActivity" />
+        <activity android:name=".supertext.SuperTextViewActivity"></activity>
     </application>
 
 </manifest>

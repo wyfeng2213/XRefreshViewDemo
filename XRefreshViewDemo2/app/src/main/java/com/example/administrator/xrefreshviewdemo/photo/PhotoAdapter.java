@@ -16,17 +16,12 @@ import com.jph.takephoto.model.TImage;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * Created by yishangfei on 2017/3/30 0030.
- * 个人主页：http://yishangfei.me
- * Github:https://github.com/yishangfei
- */
 public class PhotoAdapter extends
         RecyclerView.Adapter<PhotoAdapter.ViewHolder> {
 
     private int selectMax = 8;
-    public final int TYPE_CAMERA = 1;
-    public final int TYPE_PICTURE = 2;
+    public final int TYPE_VISIBLE_ADD = 1;
+    public final int TYPE_GONE_ADD = 2;
 
     private Context mContext;
     private LayoutInflater mInflater;
@@ -62,18 +57,6 @@ public class PhotoAdapter extends
         this.list = list;
     }
 
-    public class ViewHolder extends RecyclerView.ViewHolder {
-
-        ImageView mPhoto_image;
-        ImageView mPhoto_del;
-
-        public ViewHolder(View view) {
-            super(view);
-            mPhoto_image = (ImageView) view.findViewById(R.id.photo_image);
-            mPhoto_del = (ImageView) view.findViewById(R.id.photo_del);
-        }
-    }
-
     @Override
     public int getItemCount() {
         if (list.size() < selectMax) {
@@ -86,9 +69,9 @@ public class PhotoAdapter extends
     @Override
     public int getItemViewType(int position) {
         if (isShowAddItem(position)) {
-            return TYPE_CAMERA;
+            return TYPE_VISIBLE_ADD;
         } else {
-            return TYPE_PICTURE;
+            return TYPE_GONE_ADD;
         }
     }
 
@@ -116,7 +99,7 @@ public class PhotoAdapter extends
     public void onBindViewHolder(final ViewHolder viewHolder, final int position) {
         //少于3张，显示继续添加的图标
         Log.d("...", "onBindViewHolder: " + position);
-        if (getItemViewType(position) == TYPE_CAMERA) {
+        if (getItemViewType(position) == TYPE_VISIBLE_ADD) {
             viewHolder.mPhoto_image.setImageResource(R.mipmap.icon_addpic);
             viewHolder.mPhoto_image.setOnClickListener(new View.OnClickListener() {
                 @Override
@@ -144,6 +127,18 @@ public class PhotoAdapter extends
                     .load(list.get(position).getCompressPath())
                     .crossFade()
                     .into(viewHolder.mPhoto_image);
+        }
+    }
+
+    public class ViewHolder extends RecyclerView.ViewHolder {
+
+        ImageView mPhoto_image;
+        ImageView mPhoto_del;
+
+        public ViewHolder(View view) {
+            super(view);
+            mPhoto_image = (ImageView) view.findViewById(R.id.photo_image);
+            mPhoto_del = (ImageView) view.findViewById(R.id.photo_del);
         }
     }
 }

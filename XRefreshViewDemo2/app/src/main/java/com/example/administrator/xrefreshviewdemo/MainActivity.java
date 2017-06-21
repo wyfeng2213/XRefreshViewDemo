@@ -19,6 +19,7 @@ import com.example.administrator.xrefreshviewdemo.mvp.mvp.ui.MvpActivity;
 import com.example.administrator.xrefreshviewdemo.ormlite.OrmLiteActivity;
 import com.example.administrator.xrefreshviewdemo.photo.PhotoActivity;
 import com.example.administrator.xrefreshviewdemo.refresh.RefreshActivity;
+import com.example.administrator.xrefreshviewdemo.supertext.SuperTextViewActivity;
 import com.example.administrator.xrefreshviewdemo.switchbutton.SwitchButtonActivity;
 import com.example.administrator.xrefreshviewdemo.tab.GuideActivity;
 import com.example.administrator.xrefreshviewdemo.tab.MoreTab2Activity;
@@ -55,6 +56,7 @@ public class MainActivity extends Activity implements View.OnClickListener {
     private Button bt_ormlite;
     private Button bt_mpAndroidChart;
     private Button bt_loading;
+    private Button bt_super_textview;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -110,6 +112,8 @@ public class MainActivity extends Activity implements View.OnClickListener {
         bt_mpAndroidChart.setOnClickListener(this);
         bt_loading = (Button) findViewById(R.id.bt_loading);
         bt_loading.setOnClickListener(this);
+        bt_super_textview = (Button) findViewById(R.id.bt_super_textview);
+        bt_super_textview.setOnClickListener(this);
     }
 
     @Override
@@ -196,8 +200,13 @@ public class MainActivity extends Activity implements View.OnClickListener {
             case R.id.bt_mpAndroidChart:
                 LineChatActivity.startActivity(this);
                 break;
+            //加载框
             case R.id.bt_loading:
                 LoadingActivity.startActivity(this);
+                break;
+            //SuperTextView的使用
+            case R.id.bt_super_textview:
+                SuperTextViewActivity.startActivity(this);
                 break;
         }
     }
