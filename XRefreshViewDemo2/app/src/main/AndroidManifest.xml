@@ -43,7 +43,9 @@
         <activity android:name=".ormlite.OrmLiteActivity" />
         <activity android:name=".mpAndroidChart.LineChatActivity" />
         <activity android:name=".loading.LoadingActivity" />
-        <activity android:name=".supertext.SuperTextViewActivity"></activity>
+        <activity android:name=".supertext.SuperTextViewActivity" />
+        <activity android:name=".iosdialog.IosDialogActivity" />
+        <activity android:name=".shape.ShapeActivity"></activity>
     </application>
 
 </manifest>

@@ -11,6 +11,7 @@ import com.example.administrator.xrefreshviewdemo.calendar.CanendarActivity;
 import com.example.administrator.xrefreshviewdemo.chart.ChartActivity;
 import com.example.administrator.xrefreshviewdemo.expandablelist.animalistview.AnimatedListViewTestActivity;
 import com.example.administrator.xrefreshviewdemo.headlistview.HeadListViewActivity;
+import com.example.administrator.xrefreshviewdemo.iosdialog.IosDialogActivity;
 import com.example.administrator.xrefreshviewdemo.listviewdelete.ListViewDelDemoActivity;
 import com.example.administrator.xrefreshviewdemo.listviewletter.ListviewLetterActivity;
 import com.example.administrator.xrefreshviewdemo.loading.LoadingActivity;
@@ -19,6 +20,7 @@ import com.example.administrator.xrefreshviewdemo.mvp.mvp.ui.MvpActivity;
 import com.example.administrator.xrefreshviewdemo.ormlite.OrmLiteActivity;
 import com.example.administrator.xrefreshviewdemo.photo.PhotoActivity;
 import com.example.administrator.xrefreshviewdemo.refresh.RefreshActivity;
+import com.example.administrator.xrefreshviewdemo.shape.ShapeActivity;
 import com.example.administrator.xrefreshviewdemo.supertext.SuperTextViewActivity;
 import com.example.administrator.xrefreshviewdemo.switchbutton.SwitchButtonActivity;
 import com.example.administrator.xrefreshviewdemo.tab.GuideActivity;
@@ -57,6 +59,8 @@ public class MainActivity extends Activity implements View.OnClickListener {
     private Button bt_mpAndroidChart;
     private Button bt_loading;
     private Button bt_super_textview;
+    private Button bt_iosDialog;
+    private Button bt_shape;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -114,6 +118,10 @@ public class MainActivity extends Activity implements View.OnClickListener {
         bt_loading.setOnClickListener(this);
         bt_super_textview = (Button) findViewById(R.id.bt_super_textview);
         bt_super_textview.setOnClickListener(this);
+        bt_iosDialog = (Button) findViewById(R.id.bt_iosDialog);
+        bt_iosDialog.setOnClickListener(this);
+        bt_shape = (Button) findViewById(R.id.bt_shape);
+        bt_shape.setOnClickListener(this);
     }
 
     @Override
@@ -207,6 +215,13 @@ public class MainActivity extends Activity implements View.OnClickListener {
             //SuperTextView的使用
             case R.id.bt_super_textview:
                 SuperTextViewActivity.startActivity(this);
+                break;
+            //ios dialog的使用
+            case R.id.bt_iosDialog:
+                IosDialogActivity.startActivity(this);
+                break;
+            case R.id.bt_shape:
+                ShapeActivity.startActivity(this);
                 break;
         }
     }
