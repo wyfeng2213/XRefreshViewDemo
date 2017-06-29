@@ -18,6 +18,7 @@ import com.example.administrator.xrefreshviewdemo.loading.LoadingActivity;
 import com.example.administrator.xrefreshviewdemo.mpAndroidChart.LineChatActivity;
 import com.example.administrator.xrefreshviewdemo.mvp.mvp.ui.MvpActivity;
 import com.example.administrator.xrefreshviewdemo.ormlite.OrmLiteActivity;
+import com.example.administrator.xrefreshviewdemo.permission.PermissionTestActivity;
 import com.example.administrator.xrefreshviewdemo.photo.PhotoActivity;
 import com.example.administrator.xrefreshviewdemo.refresh.RefreshActivity;
 import com.example.administrator.xrefreshviewdemo.shape.ShapeActivity;
@@ -61,6 +62,7 @@ public class MainActivity extends Activity implements View.OnClickListener {
     private Button bt_super_textview;
     private Button bt_iosDialog;
     private Button bt_shape;
+    private Button bt_permission;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -122,6 +124,8 @@ public class MainActivity extends Activity implements View.OnClickListener {
         bt_iosDialog.setOnClickListener(this);
         bt_shape = (Button) findViewById(R.id.bt_shape);
         bt_shape.setOnClickListener(this);
+        bt_permission = (Button) findViewById(R.id.bt_permission);
+        bt_permission.setOnClickListener(this);
     }
 
     @Override
@@ -220,8 +224,13 @@ public class MainActivity extends Activity implements View.OnClickListener {
             case R.id.bt_iosDialog:
                 IosDialogActivity.startActivity(this);
                 break;
+            //动态设置shape
             case R.id.bt_shape:
                 ShapeActivity.startActivity(this);
+                break;
+            //动态权限申请
+            case R.id.bt_permission:
+                PermissionTestActivity.startActivity(this);
                 break;
         }
     }
