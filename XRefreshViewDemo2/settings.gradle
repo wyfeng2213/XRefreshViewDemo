@@ -1,1 +1,1 @@
-include ':app', ':refreshlibrary', ':calendarlibrary', ':browse', ':healthlibrary', ':rxretrofitlibrary'
+include ':app', ':refreshlibrary', ':calendarlibrary', ':browse', ':healthlibrary', ':rxretrofitlibrary', ':IosDialog'
