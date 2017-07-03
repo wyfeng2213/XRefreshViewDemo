@@ -2,10 +2,10 @@
 
     <!-- Base application theme. -->
     <!--<style name="AppTheme" parent="Theme.AppCompat">-->
-        <!--&lt;!&ndash; Customize your theme here. &ndash;&gt;-->
-        <!--<item name="colorPrimary">@color/colorPrimary</item>-->
-        <!--<item name="colorPrimaryDark">@color/colorPrimaryDark</item>-->
-        <!--<item name="colorAccent">@color/colorAccent</item>-->
+    <!--&lt;!&ndash; Customize your theme here. &ndash;&gt;-->
+    <!--<item name="colorPrimary">@color/colorPrimary</item>-->
+    <!--<item name="colorPrimaryDark">@color/colorPrimaryDark</item>-->
+    <!--<item name="colorAccent">@color/colorAccent</item>-->
     <!--</style>-->
 
     <!-- Base application theme. -->
@@ -14,7 +14,8 @@
         <!--导航栏底色-->
         <item name="colorPrimary">@color/colorPrimary</item>
         <!--状态栏底色-->
-        <item name="colorPrimaryDark">@android:color/transparent</item>
+        <!--<item name="colorPrimaryDark">@android:color/transparent</item>-->
+        <item name="colorPrimaryDark">@color/colorPrimary</item>
         <!--导航栏上的标题颜色-->
         <item name="android:textColorPrimary">@android:color/black</item>
         <!--Activity窗口的颜色-->
@@ -32,7 +33,6 @@
 
 
     </style>
-
 
 
     <style name="dialog">

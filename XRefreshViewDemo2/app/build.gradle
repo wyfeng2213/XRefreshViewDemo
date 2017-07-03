@@ -79,6 +79,8 @@ dependencies {
     compile 'org.simple:adapter:1.0.1'
     //仿ios pickerView
     compile 'com.contrarywind:Android-PickerView:3.2.5'
+    //searchView
+    compile 'com.wenwenwen888:searchbox:1.0.0'
     compile project(':refreshlibrary')
     compile project(':calendarlibrary')
     compile project(':healthlibrary')

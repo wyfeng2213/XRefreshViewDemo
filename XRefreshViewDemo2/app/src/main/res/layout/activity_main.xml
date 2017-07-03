@@ -211,5 +211,13 @@
             android:layout_margin="10dp"
             android:padding="10dp"
             android:text="动态权限设置" />
+
+        <Button
+            android:id="@+id/bt_search"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:padding="10dp"
+            android:text="searchView的使用" />
     </LinearLayout>
 </ScrollView>

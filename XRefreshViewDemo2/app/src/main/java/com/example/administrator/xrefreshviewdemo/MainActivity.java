@@ -21,6 +21,7 @@ import com.example.administrator.xrefreshviewdemo.ormlite.OrmLiteActivity;
 import com.example.administrator.xrefreshviewdemo.permission.PermissionTestActivity;
 import com.example.administrator.xrefreshviewdemo.photo.PhotoActivity;
 import com.example.administrator.xrefreshviewdemo.refresh.RefreshActivity;
+import com.example.administrator.xrefreshviewdemo.searchview.SearchActivity;
 import com.example.administrator.xrefreshviewdemo.shape.ShapeActivity;
 import com.example.administrator.xrefreshviewdemo.supertext.SuperTextViewActivity;
 import com.example.administrator.xrefreshviewdemo.switchbutton.SwitchButtonActivity;
@@ -63,6 +64,7 @@ public class MainActivity extends Activity implements View.OnClickListener {
     private Button bt_iosDialog;
     private Button bt_shape;
     private Button bt_permission;
+    private Button bt_search;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -126,6 +128,8 @@ public class MainActivity extends Activity implements View.OnClickListener {
         bt_shape.setOnClickListener(this);
         bt_permission = (Button) findViewById(R.id.bt_permission);
         bt_permission.setOnClickListener(this);
+        bt_search = (Button) findViewById(R.id.bt_search);
+        bt_search.setOnClickListener(this);
     }
 
     @Override
@@ -231,6 +235,9 @@ public class MainActivity extends Activity implements View.OnClickListener {
             //动态权限申请
             case R.id.bt_permission:
                 PermissionTestActivity.startActivity(this);
+                break;
+            case R.id.bt_search:
+                SearchActivity.startActivity(this);
                 break;
         }
     }
