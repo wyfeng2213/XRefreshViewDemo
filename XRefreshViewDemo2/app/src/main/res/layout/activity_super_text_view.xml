@@ -6,19 +6,139 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:paddingBottom="@dimen/activity_vertical_margin"
-    android:paddingLeft="@dimen/activity_horizontal_margin"
-    android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="com.example.administrator.xrefreshviewdemo.supertext.SuperTextViewActivity">
 
-    <com.allen.library.SuperTextView
-        android:id="@+id/super_tv"
+
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="80dp"
-        stv:sLeftBottomTextColor2="@color/colorAccent"
-        stv:sLeftBottomTextString="招商银行（8888）"
-        stv:sLeftBottomTextString2="限额说明>>"
-        stv:sLeftTopTextString="银行卡支付"
-        stv:sLineShow="bottom"
-        stv:sRightCheckBoxShow="true" />
+        android:layout_height="match_parent"
+        android:scrollbars="none">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="5dp"
+                android:layout_marginTop="10dp"
+                android:gravity="center"
+                android:text="展示几种常见的显示方式" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:gravity="center"
+                android:text="(更多组合方式可自行组合)"
+                android:textColor="@color/colorAccent" />
+
+            <com.allen.library.SuperTextView
+                android:id="@+id/super_tv"
+                android:layout_width="match_parent"
+                android:layout_height="80dp"
+                stv:sLeftBottomTextColor2="@color/colorAccent"
+                stv:sLeftBottomTextString="招商银行（8888）"
+                stv:sLeftBottomTextString2="限额说明>>"
+                stv:sLeftIconRes="@drawable/bank_zhao_shang"
+                stv:sLeftTopTextString="银行卡支付"
+                stv:sRightCheckBoxRes="@drawable/circular_check_bg"
+                stv:sRightCheckBoxShow="true" />
+
+            <com.allen.library.SuperTextView
+                android:layout_width="match_parent"
+                android:layout_height="80dp"
+                stv:sLeftBottomTextColor="@color/colorAccent"
+                stv:sLeftBottomTextString="限额说明>>"
+                stv:sLeftIconRes="@drawable/not_bank_card_icon"
+                stv:sLeftTopTextString="银行卡支付" />
+
+            <com.allen.library.SuperTextView
+                android:layout_width="match_parent"
+                android:layout_height="80dp"
+                stv:sLeftBottomTextString="188****8888"
+                stv:sLeftIconRes="@drawable/head_default"
+                stv:sLeftTopTextString="张三" />
+
+            <com.allen.library.SuperTextView
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                stv:sLeftIconRes="@drawable/question"
+                stv:sLeftTextString="常见问题" />
+
+            <com.allen.library.SuperTextView
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                stv:sLeftIconRes="@drawable/my_bankcard"
+                stv:sLeftTextString="我的银行卡"
+                stv:sRightTextColor="@color/colorAccent"
+                stv:sRightTextString="已绑定" />
+
+            <com.allen.library.SuperTextView
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                stv:sLeftIconRes="@drawable/question"
+                stv:sLeftTextString="设置中心"
+                stv:sRightIconRes="@drawable/arrow_right_red"
+                stv:sLineColor="@android:color/transparent"
+                />
+
+
+            <com.allen.library.SuperTextView
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                stv:sLeftTextSize="14dip"
+                stv:sLeftTextString="客服热线"
+                stv:sRightTextColor="#ff0000"
+                stv:sRightTextSize="12dp"
+                stv:sRightTextString="4006179999"
+                stv:sRightTextStringRightIconRes="@drawable/arrow_right_red"
+                stv:sRightTextStringRightIconResPadding="8dip"
+                stv:sUseRipple="true" />
+
+            <com.allen.library.SuperTextView
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                stv:sCenterTextString="88.88元"
+                stv:sLeftTextString="2016-10-18"
+                stv:sRightTextString="正常"
+                />
+
+            <com.allen.library.SuperTextView
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                stv:sLeftTextString="年化率"
+                stv:sRightTextColor="@color/colorAccent"
+                stv:sRightTextString="13.8%" />
+
+            <com.allen.library.SuperTextView
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                stv:sLeftIconHeight="25dp"
+                stv:sLeftIconRes="@drawable/ic_hint_music"
+                stv:sLeftIconWidth="25dp"
+                stv:sLeftTextString="自定义图片大小"
+                stv:sRightTextString="20dp" />
+
+            <com.allen.library.SuperTextView
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                stv:sLeftIconHeight="30dp"
+                stv:sLeftIconRes="@drawable/ic_update_password"
+                stv:sLeftIconWidth="30dp"
+                stv:sLeftTextString="自定义图片大小"
+                stv:sRightTextString="30dp" />
+
+            <com.allen.library.SuperTextView
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                stv:sBackgroundDrawableRes="@drawable/selector_red"
+                stv:sLeftTextString="自定义背景点击效果"
+                stv:sRightTextStringRightIconRes="@drawable/arrow_right_red" />
+
+        </LinearLayout>
+    </ScrollView>
 </RelativeLayout>

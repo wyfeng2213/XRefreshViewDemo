@@ -7,6 +7,9 @@ import android.support.v7.app.AppCompatActivity;
 
 import com.example.administrator.xrefreshviewdemo.R;
 
+/**
+ * https://github.com/lygttpod/SuperTextView
+ */
 public class SuperTextViewActivity extends AppCompatActivity {
 
     @Override
