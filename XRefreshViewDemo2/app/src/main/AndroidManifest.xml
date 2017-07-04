@@ -3,8 +3,10 @@
     xmlns:tools="http://schemas.android.com/tools"
     package="com.example.administrator.xrefreshviewdemo">
 
+    <uses-sdk tools:overrideLibrary="com.wyt.searchbox,ezy.library.badgebutton" />
+
     <uses-permission android:name="android.permission.INTERNET" />
-    <uses-sdk tools:overrideLibrary="com.wyt.searchbox" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -48,7 +50,11 @@
         <activity android:name=".iosdialog.IosDialogActivity" />
         <activity android:name=".shape.ShapeActivity" />
         <activity android:name=".permission.PermissionTestActivity" />
-        <activity android:name=".searchview.SearchActivity"></activity>
+        <activity android:name=".searchview.SearchActivity" />
+        <activity android:name=".supertext.SuperViewActivity" />
+        <activity android:name=".supertext.SuperTextShapeActivity" />
+        <activity android:name=".supertext.StateButtonActivity" />
+        <activity android:name=".supertext.BadgebuttonActivity"></activity>
     </application>
 
 </manifest>

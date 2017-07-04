@@ -45,5 +45,8 @@
     <color name="line_color1">#A78bf9</color>
     <color name="line_color2">#6c9ff1</color>
     <color name="line_color3">#c5f073</color>
+
+    <color name="opacity_5_a58fed">#80A58FED</color>
+    <color name="maskPressed">#33888888</color>
 </resources>
 

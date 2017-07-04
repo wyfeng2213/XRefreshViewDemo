@@ -186,7 +186,7 @@
             android:layout_height="wrap_content"
             android:layout_margin="10dp"
             android:padding="10dp"
-            android:text="superTextView的使用" />
+            android:text="superView的使用" />
 
         <Button
             android:id="@+id/bt_iosDialog"

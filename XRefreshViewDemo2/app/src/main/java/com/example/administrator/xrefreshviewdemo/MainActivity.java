@@ -23,7 +23,7 @@ import com.example.administrator.xrefreshviewdemo.photo.PhotoActivity;
 import com.example.administrator.xrefreshviewdemo.refresh.RefreshActivity;
 import com.example.administrator.xrefreshviewdemo.searchview.SearchActivity;
 import com.example.administrator.xrefreshviewdemo.shape.ShapeActivity;
-import com.example.administrator.xrefreshviewdemo.supertext.SuperTextViewActivity;
+import com.example.administrator.xrefreshviewdemo.supertext.SuperViewActivity;
 import com.example.administrator.xrefreshviewdemo.switchbutton.SwitchButtonActivity;
 import com.example.administrator.xrefreshviewdemo.tab.GuideActivity;
 import com.example.administrator.xrefreshviewdemo.tab.MoreTab2Activity;
@@ -222,7 +222,7 @@ public class MainActivity extends Activity implements View.OnClickListener {
                 break;
             //SuperTextView的使用
             case R.id.bt_super_textview:
-                SuperTextViewActivity.startActivity(this);
+                SuperViewActivity.startActivity(this);
                 break;
             //ios dialog的使用
             case R.id.bt_iosDialog:
@@ -236,6 +236,7 @@ public class MainActivity extends Activity implements View.OnClickListener {
             case R.id.bt_permission:
                 PermissionTestActivity.startActivity(this);
                 break;
+            //搜索
             case R.id.bt_search:
                 SearchActivity.startActivity(this);
                 break;
