@@ -24,6 +24,7 @@ import com.shizhefei.view.indicator.transition.OnTransitionTextListener;
 
 /**
  * Created by LuckyJayce on 2016/6/25.
+ * 修改成了蓝色字体和蓝色线条
  */
 public class MoreTab2Activity extends FragmentActivity {
     private IndicatorViewPager indicatorViewPager;

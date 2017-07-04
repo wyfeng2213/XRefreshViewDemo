@@ -17,6 +17,9 @@ import com.shizhefei.view.indicator.slidebar.DrawableBar;
 import com.shizhefei.view.indicator.slidebar.ScrollBar;
 import com.shizhefei.view.indicator.transition.OnTransitionTextListener;
 
+/**
+ * 红色背景样式
+ */
 public class ScrollTabActivity extends AppCompatActivity {
 
     private ScrollIndicatorView moretab_indicator;

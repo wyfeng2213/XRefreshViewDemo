@@ -12,15 +12,19 @@ import android.view.ViewGroup;
 import android.view.ViewGroup.LayoutParams;
 
 import com.example.administrator.xrefreshviewdemo.R;
+import com.shizhefei.view.indicator.BannerComponent;
 import com.shizhefei.view.indicator.Indicator;
 import com.shizhefei.view.indicator.IndicatorViewPager;
 import com.shizhefei.view.indicator.IndicatorViewPager.IndicatorPagerAdapter;
 import com.shizhefei.view.indicator.IndicatorViewPager.IndicatorViewPagerAdapter;
 
+/**
+ * 图片的滑动  界面的滑动参考GuideActivity2
+ */
 public class GuideActivity extends FragmentActivity {
     private IndicatorViewPager indicatorViewPager;
     private LayoutInflater inflate;
-
+    private BannerComponent bannerComponent;
     @Override
     protected void onCreate(Bundle arg0) {
         super.onCreate(arg0);
@@ -33,6 +37,21 @@ public class GuideActivity extends FragmentActivity {
         indicatorViewPager.setAdapter(adapter);
 
 
+        bannerComponent = new BannerComponent(indicator, viewPager, false);
+        bannerComponent.setAdapter(adapter);
+        bannerComponent.setAutoPlayTime(2500);
+    }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+        bannerComponent.startAutoPlay();
+    }
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+        bannerComponent.stopAutoPlay();
     }
 
     public static void startActivity(Context context) {

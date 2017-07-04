@@ -15,5 +15,6 @@
     <ezy.ui.view.BadgeButton
         style="@style/BadgeButton.Normal"
         android:text="Text"
+        app:btnBadgeColor="@color/red"
         app:btnBadgeText="333" />
 </LinearLayout>
