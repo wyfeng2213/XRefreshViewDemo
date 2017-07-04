@@ -20,6 +20,7 @@ import com.shizhefei.view.indicator.IndicatorViewPager.IndicatorViewPagerAdapter
 
 /**
  * 图片的滑动  界面的滑动参考GuideActivity2
+ * 修改白色的小点 需要修改getViewForTab里面的布局文件
  */
 public class GuideActivity extends FragmentActivity {
     private IndicatorViewPager indicatorViewPager;
