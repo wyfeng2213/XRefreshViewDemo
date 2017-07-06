@@ -7,6 +7,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.LinearLayout;
 
+import com.example.administrator.xrefreshviewdemo.androidview.AndroidViewActivity;
 import com.example.administrator.xrefreshviewdemo.calendar.CanendarActivity;
 import com.example.administrator.xrefreshviewdemo.chart.ChartActivity;
 import com.example.administrator.xrefreshviewdemo.expandablelist.animalistview.AnimatedListViewTestActivity;
@@ -65,6 +66,7 @@ public class MainActivity extends Activity implements View.OnClickListener {
     private Button bt_shape;
     private Button bt_permission;
     private Button bt_search;
+    private Button bt_androidview;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -130,6 +132,8 @@ public class MainActivity extends Activity implements View.OnClickListener {
         bt_permission.setOnClickListener(this);
         bt_search = (Button) findViewById(R.id.bt_search);
         bt_search.setOnClickListener(this);
+        bt_androidview = (Button) findViewById(R.id.bt_androidview);
+        bt_androidview.setOnClickListener(this);
     }
 
     @Override
@@ -239,6 +243,9 @@ public class MainActivity extends Activity implements View.OnClickListener {
             //搜索
             case R.id.bt_search:
                 SearchActivity.startActivity(this);
+                break;
+            case R.id.bt_androidview:
+                AndroidViewActivity.startActivity(this);
                 break;
         }
     }

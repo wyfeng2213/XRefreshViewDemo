@@ -328,13 +328,13 @@ public class IosDialogActivity extends Activity implements OnClickListener {
                 .setType(new boolean[]{true, true, true, false, false, false})
 //                .setLabel("", "", "", "点", "分", "")
                 .isCenterLabel(false)
-                .isCyclic(false)
-                .setDividerColor(Color.DKGRAY)
-                .setContentSize(21)
-                .setDate(selectedDate)
-                .setRangDate(startDate, endDate)
-                .setBackgroundId(0x00FFFFFF) //设置外部遮罩颜色
-                .setDecorView(null)
+//                .isCyclic(false)
+//                .setDividerColor(Color.DKGRAY)
+//                .setContentSize(21)
+//                .setDate(selectedDate)
+//                .setRangDate(startDate, endDate)
+//                .setBackgroundId(0x00FFFFFF) //设置外部遮罩颜色
+//                .setDecorView(null)
                 .build();
     }
 

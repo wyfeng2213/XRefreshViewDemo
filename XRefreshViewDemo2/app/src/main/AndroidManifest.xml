@@ -54,7 +54,8 @@
         <activity android:name=".supertext.SuperViewActivity" />
         <activity android:name=".supertext.SuperTextShapeActivity" />
         <activity android:name=".supertext.StateButtonActivity" />
-        <activity android:name=".supertext.BadgebuttonActivity"></activity>
+        <activity android:name=".supertext.BadgebuttonActivity" />
+        <activity android:name=".androidview.AndroidViewActivity"></activity>
     </application>
 
 </manifest>

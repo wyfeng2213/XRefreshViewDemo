@@ -219,5 +219,14 @@
             android:layout_margin="10dp"
             android:padding="10dp"
             android:text="searchView的使用" />
+
+        <Button
+            android:id="@+id/bt_androidview"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:padding="10dp"
+            android:text="androidView的使用" />
+
     </LinearLayout>
 </ScrollView>

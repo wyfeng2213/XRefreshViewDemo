@@ -65,6 +65,17 @@
 
             <com.allen.library.SuperTextView
                 android:layout_width="match_parent"
+                android:layout_height="80dp"
+                stv:sLeftBottomTextString="左下文字 "
+                stv:sLeftBottomTextString2="左下第二个文字"
+                stv:sLeftIconRes="@drawable/head_default"
+                stv:sCenterTextString="中间文字"
+                stv:sBottomLineWidth="20dp"
+                stv:sLineColor="@color/red"
+                stv:sLeftTopTextString="左上文字" />
+
+            <com.allen.library.SuperTextView
+                android:layout_width="match_parent"
                 android:layout_height="50dp"
                 stv:sLeftIconRes="@drawable/question"
                 stv:sLeftTextString="常见问题" />
@@ -81,10 +92,10 @@
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
                 stv:sLeftIconRes="@drawable/question"
+                stv:sLeftTextMarginLeft="5dp"
                 stv:sLeftTextString="设置中心"
-                stv:sRightIconRes="@drawable/arrow_right_red"
                 stv:sLineColor="@android:color/transparent"
-                />
+                stv:sRightIconRes="@drawable/arrow_right_red" />
 
 
             <com.allen.library.SuperTextView
@@ -104,8 +115,7 @@
                 android:layout_height="50dp"
                 stv:sCenterTextString="88.88元"
                 stv:sLeftTextString="2016-10-18"
-                stv:sRightTextString="正常"
-                />
+                stv:sRightTextString="正常" />
 
             <com.allen.library.SuperTextView
                 android:layout_width="match_parent"
