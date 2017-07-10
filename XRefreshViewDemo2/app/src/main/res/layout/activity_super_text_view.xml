@@ -55,7 +55,8 @@
                 stv:sLeftTopTextString="银行卡支付"
                 stv:sLeftViewGravity="left_center"
 
-                stv:sRightCheckBoxRes="@drawable/circular_check_bg" />
+                stv:sRightCheckBoxRes="@drawable/circular_check_bg"
+                android:id="@+id/superTextView" />
 
 
             <com.allen.library.SuperTextView

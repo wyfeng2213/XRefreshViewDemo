@@ -7,6 +7,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.LinearLayout;
 
+import com.example.administrator.xrefreshviewdemo.MyEdtitext.MyEditextActivity;
 import com.example.administrator.xrefreshviewdemo.androidview.AndroidViewActivity;
 import com.example.administrator.xrefreshviewdemo.calendar.CanendarActivity;
 import com.example.administrator.xrefreshviewdemo.chart.ChartActivity;
@@ -67,6 +68,7 @@ public class MainActivity extends Activity implements View.OnClickListener {
     private Button bt_permission;
     private Button bt_search;
     private Button bt_androidview;
+    private Button bt_edt;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -134,6 +136,8 @@ public class MainActivity extends Activity implements View.OnClickListener {
         bt_search.setOnClickListener(this);
         bt_androidview = (Button) findViewById(R.id.bt_androidview);
         bt_androidview.setOnClickListener(this);
+        bt_edt = (Button) findViewById(R.id.bt_edt);
+        bt_edt.setOnClickListener(this);
     }
 
     @Override
@@ -246,6 +250,9 @@ public class MainActivity extends Activity implements View.OnClickListener {
                 break;
             case R.id.bt_androidview:
                 AndroidViewActivity.startActivity(this);
+                break;
+            case R.id.bt_edt:
+                MyEditextActivity.startActivity(this);
                 break;
         }
     }
