@@ -11,6 +11,7 @@ import com.example.administrator.xrefreshviewdemo.MyEdtitext.MyEditextActivity;
 import com.example.administrator.xrefreshviewdemo.androidview.AndroidViewActivity;
 import com.example.administrator.xrefreshviewdemo.calendar.CanendarActivity;
 import com.example.administrator.xrefreshviewdemo.chart.ChartActivity;
+import com.example.administrator.xrefreshviewdemo.databinding.DataBindingActivity;
 import com.example.administrator.xrefreshviewdemo.expandablelist.animalistview.AnimatedListViewTestActivity;
 import com.example.administrator.xrefreshviewdemo.headlistview.HeadListViewActivity;
 import com.example.administrator.xrefreshviewdemo.iosdialog.IosDialogActivity;
@@ -69,6 +70,7 @@ public class MainActivity extends Activity implements View.OnClickListener {
     private Button bt_search;
     private Button bt_androidview;
     private Button bt_edt;
+    private Button bt_databinding;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -138,6 +140,8 @@ public class MainActivity extends Activity implements View.OnClickListener {
         bt_androidview.setOnClickListener(this);
         bt_edt = (Button) findViewById(R.id.bt_edt);
         bt_edt.setOnClickListener(this);
+        bt_databinding = (Button) findViewById(R.id.bt_databinding);
+        bt_databinding.setOnClickListener(this);
     }
 
     @Override
@@ -253,6 +257,9 @@ public class MainActivity extends Activity implements View.OnClickListener {
                 break;
             case R.id.bt_edt:
                 MyEditextActivity.startActivity(this);
+                break;
+            case R.id.bt_databinding:
+                DataBindingActivity.startActivity(this);
                 break;
         }
     }

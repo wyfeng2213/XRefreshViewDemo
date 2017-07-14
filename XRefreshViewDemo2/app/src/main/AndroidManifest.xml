@@ -56,7 +56,8 @@
         <activity android:name=".supertext.StateButtonActivity" />
         <activity android:name=".supertext.BadgebuttonActivity" />
         <activity android:name=".androidview.AndroidViewActivity" />
-        <activity android:name=".MyEdtitext.MyEditextActivity"></activity>
+        <activity android:name=".MyEdtitext.MyEditextActivity" />
+        <activity android:name=".databinding.DataBindingActivity"></activity>
     </application>
 
 </manifest>
