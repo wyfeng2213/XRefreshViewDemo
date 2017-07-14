@@ -14,19 +14,6 @@ import android.widget.TextView;
 
 import com.example.administrator.xrefreshviewdemo.R;
 
-/**
- * ┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
- * ┃   ╭﹉﹊﹉╮ ╔═════╗╔═════╗╔═════╗┃
- * ┃╭╯老斯基㊣╠╣淡漠de人生╠╣2016-10-09╠╣ 欢迎关注 ╣┃
- * ┃╰⊙┈┈┈⊙╯╚◎═══◎╝╚◎═══◎╝╚◎═══◎╝┃
- * ┣━━━┳━━━━━━━━━━━━━━━━━━━━━━━━┫
- * ┃GitHub┃https://github.com/FJ917                        ┃
- * ┃简  书┃http://www.jianshu.com/users/3d2770e6e489       ┃
- * ┃Q    Q┃511334686                                       ┃
- * ┗━━━┻━━━━━━━━━━━━━━━━━━━━━━━━┛
- */
-
-
 // JUMP
 public class EditTextCount extends RelativeLayout {
 

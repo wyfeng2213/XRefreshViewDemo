@@ -75,7 +75,7 @@ dependencies {
     // mpAndroidChart
     compile 'com.github.PhilJay:MPAndroidChart:v3.0.2'
     //superTextView 多行布局
-    compile 'com.github.lygttpod:SuperTextView:2.0.1'
+    compile 'com.github.lygttpod:SuperTextView:2.0.3'
     // superTextView shape
     compile 'com.github.chenBingX:SuperTextView:v1.3'
     // 红色小圆点
