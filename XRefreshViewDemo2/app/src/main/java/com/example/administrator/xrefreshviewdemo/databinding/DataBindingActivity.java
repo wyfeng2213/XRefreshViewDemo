@@ -6,7 +6,6 @@ import android.databinding.DataBindingUtil;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 
-import com.cmcc.healthlibrary.utils.ToastUtil;
 import com.example.administrator.xrefreshviewdemo.R;
 import com.example.administrator.xrefreshviewdemo.UserBinding;
 
@@ -18,11 +17,11 @@ public class DataBindingActivity extends AppCompatActivity {
 //        setContentView(R.layout.activity_data_binding);
         UserBinding binding = DataBindingUtil.setContentView(
                 this, R.layout.activity_data_binding);
-        User user = new User("万XX", "篮球");
-        binding.setUser(user);
-
-        binding.getUser();
-        ToastUtil.show(this,binding.getUser().getUserName()+","+binding.getUser().getLike());
+//        User user = new User("万XX", "篮球");
+//        binding.setUser(user);
+//
+//        binding.getUser();
+//        ToastUtil.show(this,binding.getUser().getUserName()+","+binding.getUser().getLike());
     }
 
     public static void startActivity(Context context) {

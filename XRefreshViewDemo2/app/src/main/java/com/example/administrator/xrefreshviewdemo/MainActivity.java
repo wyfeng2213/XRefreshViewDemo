@@ -31,6 +31,7 @@ import com.example.administrator.xrefreshviewdemo.switchbutton.SwitchButtonActiv
 import com.example.administrator.xrefreshviewdemo.tab.GuideActivity;
 import com.example.administrator.xrefreshviewdemo.tab.MoreTab2Activity;
 import com.example.administrator.xrefreshviewdemo.tab.ScrollTabActivity;
+import com.example.administrator.xrefreshviewdemo.text.TextActivity;
 import com.example.administrator.xrefreshviewdemo.toolbar.ToolBarTestActivty2;
 import com.example.administrator.xrefreshviewdemo.wheelview.WheelActivity;
 import com.example.administrator.xrefreshviewdemo.zbar.ZbarActivity;
@@ -71,6 +72,7 @@ public class MainActivity extends Activity implements View.OnClickListener {
     private Button bt_androidview;
     private Button bt_edt;
     private Button bt_databinding;
+    private Button bt_text;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -142,6 +144,8 @@ public class MainActivity extends Activity implements View.OnClickListener {
         bt_edt.setOnClickListener(this);
         bt_databinding = (Button) findViewById(R.id.bt_databinding);
         bt_databinding.setOnClickListener(this);
+        bt_text = (Button) findViewById(R.id.bt_text);
+        bt_text.setOnClickListener(this);
     }
 
     @Override
@@ -252,14 +256,21 @@ public class MainActivity extends Activity implements View.OnClickListener {
             case R.id.bt_search:
                 SearchActivity.startActivity(this);
                 break;
+            //android 控件使用
             case R.id.bt_androidview:
                 AndroidViewActivity.startActivity(this);
                 break;
+            //计数 的editTextView
             case R.id.bt_edt:
                 MyEditextActivity.startActivity(this);
                 break;
+            //databinding 的使用
             case R.id.bt_databinding:
                 DataBindingActivity.startActivity(this);
+                break;
+            // text使用结合
+            case R.id.bt_text:
+                TextActivity.startActivity(this);
                 break;
         }
     }

@@ -4,13 +4,18 @@ import android.app.DatePickerDialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.os.Build;
 import android.os.Bundle;
+import android.support.annotation.RequiresApi;
+import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
+import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.LinearLayout;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.cmcc.healthlibrary.utils.ToastUtil;
@@ -25,7 +30,12 @@ public class AndroidViewActivity extends AppCompatActivity implements View.OnCli
     private LinearLayout activity_android_view;
     Context mContext;
     private Button bt_dialog_list;
+    private TextView tv1;
+    private TextView tv2;
+    private TextView tv3;
+    private TextView tv4;
 
+    @RequiresApi(api = Build.VERSION_CODES.JELLY_BEAN)
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -39,6 +49,7 @@ public class AndroidViewActivity extends AppCompatActivity implements View.OnCli
         context.startActivity(starter);
     }
 
+    @RequiresApi(api = Build.VERSION_CODES.JELLY_BEAN)
     private void initView() {
         bt_dialog = (Button) findViewById(R.id.bt_dialog);
         bt_date = (Button) findViewById(R.id.bt_date);
@@ -48,10 +59,25 @@ public class AndroidViewActivity extends AppCompatActivity implements View.OnCli
         bt_date.setOnClickListener(this);
         bt_dialog_list = (Button) findViewById(R.id.bt_dialog_list);
         bt_dialog_list.setOnClickListener(this);
+        tv1 = (TextView) findViewById(R.id.tv1);
+        tv1.setOnClickListener(this);
+        tv2 = (TextView) findViewById(R.id.tv2);
+        tv2.setOnClickListener(this);
+        tv3 = (TextView) findViewById(R.id.tv3);
+        tv3.setOnClickListener(this);
+        tv4 = (TextView) findViewById(R.id.tv4);
+        tv4.setOnClickListener(this);
+
+        tv1.setTextColor(ContextCompat.getColor(this, R.color.black));
+        tv2.setTextColor(ContextCompat.getColor(this, R.color.tab_textcolor_selector));
+        tv2.setBackground(ContextCompat.getDrawable(this, R.mipmap.custom_grid_scan_line));
     }
+
+    Boolean flag = true;
 
     @Override
     public void onClick(View v) {
+
         switch (v.getId()) {
             case R.id.bt_dialog:
                 showSelectDialog(v);
@@ -61,6 +87,21 @@ public class AndroidViewActivity extends AppCompatActivity implements View.OnCli
                 break;
             case R.id.bt_dialog_list:
                 showListDialog(v);
+                break;
+            case R.id.tv2:
+                tv2.setSelected(true);
+                break;
+            case R.id.tv3:
+                if (flag) {
+
+                    flag = false;
+                    tv3.setEllipsize(null); // 展开
+                    tv3.setLines(10);
+                } else {
+                    flag = true;
+                    tv3.setEllipsize(TextUtils.TruncateAt.END); // 收缩
+                    tv3.setLines(2);
+                }
                 break;
         }
     }
