@@ -17,6 +17,7 @@ public class SuperViewActivity extends AppCompatActivity implements View.OnClick
     private Button bt3;
     private Button bt4;
     private LinearLayout activity_super_view;
+    private Button bt5;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,6 +42,8 @@ public class SuperViewActivity extends AppCompatActivity implements View.OnClick
         bt2.setOnClickListener(this);
         bt3.setOnClickListener(this);
         bt4.setOnClickListener(this);
+        bt5 = (Button) findViewById(R.id.bt5);
+        bt5.setOnClickListener(this);
     }
 
     @Override
@@ -61,6 +64,9 @@ public class SuperViewActivity extends AppCompatActivity implements View.OnClick
             //红点的使用
             case R.id.bt4:
                 BadgebuttonActivity.startActivity(this);
+                break;
+            case R.id.bt5:
+                BadgeViewActivity.startActivity(this);
                 break;
         }
     }

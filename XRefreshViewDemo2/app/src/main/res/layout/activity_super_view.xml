@@ -30,5 +30,11 @@
         android:id="@+id/bt4"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="badgebutton红点的使用" />
+        android:text="badgebutton TextView红点的使用" />
+
+    <Button
+        android:id="@+id/bt5"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="任意view 红点的使用" />
 </LinearLayout>
