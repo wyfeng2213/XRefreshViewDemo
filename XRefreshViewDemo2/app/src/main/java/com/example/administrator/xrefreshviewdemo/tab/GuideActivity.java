@@ -11,6 +11,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.view.ViewGroup.LayoutParams;
 
+import com.cmcc.healthlibrary.utils.ToastUtil;
 import com.example.administrator.xrefreshviewdemo.R;
 import com.shizhefei.view.indicator.BannerComponent;
 import com.shizhefei.view.indicator.Indicator;
@@ -74,12 +75,18 @@ public class GuideActivity extends FragmentActivity {
 
 
         @Override
-        public View getViewForPage(int position, View convertView, ViewGroup container) {
+        public View getViewForPage(final int position, View convertView, ViewGroup container) {
             if (convertView == null) {
                 convertView = new View(getApplicationContext());
                 convertView.setLayoutParams(new LayoutParams(LayoutParams.MATCH_PARENT, LayoutParams.MATCH_PARENT));
             }
             convertView.setBackgroundResource(images[position]);
+            convertView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    ToastUtil.show(GuideActivity.this,"点击了:"+position);
+                }
+            });
             return convertView;
         }
 

@@ -11,6 +11,7 @@ import com.example.administrator.xrefreshviewdemo.MyEdtitext.MyEditextActivity;
 import com.example.administrator.xrefreshviewdemo.androidview.AndroidViewActivity;
 import com.example.administrator.xrefreshviewdemo.calendar.CanendarActivity;
 import com.example.administrator.xrefreshviewdemo.chart.ChartActivity;
+import com.example.administrator.xrefreshviewdemo.chenjin.ChenjinActivity;
 import com.example.administrator.xrefreshviewdemo.databinding.DataBindingActivity;
 import com.example.administrator.xrefreshviewdemo.expandablelist.animalistview.AnimatedListViewTestActivity;
 import com.example.administrator.xrefreshviewdemo.headlistview.HeadListViewActivity;
@@ -73,6 +74,7 @@ public class MainActivity extends Activity implements View.OnClickListener {
     private Button bt_edt;
     private Button bt_databinding;
     private Button bt_text;
+    private Button bt_chenjin;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -146,6 +148,8 @@ public class MainActivity extends Activity implements View.OnClickListener {
         bt_databinding.setOnClickListener(this);
         bt_text = (Button) findViewById(R.id.bt_text);
         bt_text.setOnClickListener(this);
+        bt_chenjin = (Button) findViewById(R.id.bt_chenjin);
+        bt_chenjin.setOnClickListener(this);
     }
 
     @Override
@@ -271,6 +275,10 @@ public class MainActivity extends Activity implements View.OnClickListener {
             // text使用结合
             case R.id.bt_text:
                 TextActivity.startActivity(this);
+                break;
+            //沉浸通知栏
+            case R.id.bt_chenjin:
+                ChenjinActivity.startActivity(this);
                 break;
         }
     }

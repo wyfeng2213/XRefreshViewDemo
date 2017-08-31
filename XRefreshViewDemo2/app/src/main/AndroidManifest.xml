@@ -59,7 +59,8 @@
         <activity android:name=".MyEdtitext.MyEditextActivity" />
         <activity android:name=".databinding.DataBindingActivity" />
         <activity android:name=".text.TextActivity" />
-        <activity android:name=".supertext.BadgeViewActivity"></activity>
+        <activity android:name=".supertext.BadgeViewActivity" />
+        <activity android:name=".chenjin.ChenjinActivity"></activity>
     </application>
 
 </manifest>

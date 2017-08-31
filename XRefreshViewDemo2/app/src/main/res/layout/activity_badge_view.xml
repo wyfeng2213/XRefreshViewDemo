@@ -81,7 +81,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:background="#999"
+                android:background="@color/deepblue"
                 android:drawableTop="@mipmap/ic_launcher"
                 android:gravity="center"
                 android:text="资讯️"
@@ -108,13 +108,15 @@
                 android:gravity="center"
                 android:text="独立" />
 
+            <!-- android:layout_marginRight="15dp"
+                android:layout_marginTop="5dp"-->
             <com.itingchunyu.badgeview.BaseBadgeView
                 android:id="@+id/baseBadgeView"
                 android:layout_width="wrap_content"
                 android:layout_height="100dp"
                 android:layout_gravity="right|top"
-                android:layout_marginRight="15dp"
-                android:layout_marginTop="5dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginBottom="10dp"
                 android:gravity="center"
                 app:badge_count="0"
                 app:badge_none_show="true" />
