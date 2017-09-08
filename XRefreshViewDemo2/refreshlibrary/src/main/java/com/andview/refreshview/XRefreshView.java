@@ -83,7 +83,7 @@ public class XRefreshView extends LinearLayout {
     /**
      * 当刷新完成以后，headerview和footerview被固定的时间，在这个时间以后headerview才会回弹
      */
-    private int mPinnedTime = 1000;
+    private int mPinnedTime = 100;
     private XRefreshViewState mState = null;
     /**
      * 当已无更多数据时候，需把这个变量设为true
@@ -905,7 +905,7 @@ public class XRefreshView extends LinearLayout {
                 mStopingRefresh = true;
                 mState = XRefreshViewState.STATE_COMPLETE;
                 mFooterCallBack.onStateFinish(hideFooter);
-                if (mPinnedTime >= 1000) {// 在加载更多完成以后，只有mPinnedTime大于1s才生效，不然效果不好
+                if (mPinnedTime >= 100) {// 在加载更多完成以后，只有mPinnedTime大于1s才生效，不然效果不好
                     postDelayed(new Runnable() {
 
                         @Override
@@ -928,7 +928,7 @@ public class XRefreshView extends LinearLayout {
                 mStopingRefresh = true;
                 mState = XRefreshViewState.STATE_COMPLETE;
                 mFooterCallBack.onStateComplete();
-                if (mPinnedTime >= 1000) {// 在加载更多完成以后，只有mPinnedTime大于1s才生效，不然效果不好
+                if (mPinnedTime >= 100) {// 在加载更多完成以后，只有mPinnedTime大于1s才生效，不然效果不好
                     postDelayed(new Runnable() {
 
                         @Override
