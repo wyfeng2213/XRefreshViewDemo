@@ -29,7 +29,7 @@ import com.example.administrator.xrefreshviewdemo.searchview.SearchActivity;
 import com.example.administrator.xrefreshviewdemo.shape.ShapeActivity;
 import com.example.administrator.xrefreshviewdemo.supertext.SuperViewActivity;
 import com.example.administrator.xrefreshviewdemo.switchbutton.SwitchButtonActivity;
-import com.example.administrator.xrefreshviewdemo.tab.GuideActivity;
+import com.example.administrator.xrefreshviewdemo.tab.GuideActivity2;
 import com.example.administrator.xrefreshviewdemo.tab.MoreTab2Activity;
 import com.example.administrator.xrefreshviewdemo.tab.ScrollTabActivity;
 import com.example.administrator.xrefreshviewdemo.text.TextActivity;
@@ -193,7 +193,7 @@ public class MainActivity extends Activity implements View.OnClickListener {
                 break;
             //带白色小点的滑动
             case R.id.bt_tab3:
-                GuideActivity.startActivity(this);
+                GuideActivity2.startActivity(this);
                 break;
             //滚轮的滑动
             case R.id.bt_wheel:

@@ -1,5 +1,7 @@
 package com.example.administrator.xrefreshviewdemo.tab;
 
+import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.view.PagerAdapter;
@@ -60,6 +62,11 @@ public class GuideActivity2 extends FragmentActivity implements
 //        }.start();
     }
 
+    public static void startActivity(Context context) {
+        Intent starter = new Intent(context, GuideActivity2.class);
+        context.startActivity(starter);
+    }
+
     private int currentItem = 0;
 
     private void slipToMain() {
@@ -105,9 +112,10 @@ public class GuideActivity2 extends FragmentActivity implements
     }
 
     private int[] images = {};
-    private int[] layoutId = {};
+//    private int[] layoutId = {};
     //    private int[] images = {R.drawable.p1, R.drawable.p2, R.drawable.p3, R.drawable.p4};
-//    private int[] layoutId = {R.layout.test_guide, R.layout.test_guide, R.layout.test_guide, R.layout.test_guide};
+    private int[] layoutId = {R.layout.activity_iosdialog, R.layout.activity_iosdialog,
+        R.layout.activity_iosdialog, R.layout.activity_iosdialog};
     private IndicatorPagerAdapter adapter = new IndicatorViewPagerAdapter() {
 
         @Override
@@ -124,7 +132,7 @@ public class GuideActivity2 extends FragmentActivity implements
             if (convertView == null) {
                 convertView = inflate.inflate(layoutId[position], container, false);
             }
-//            if (position == layoutId.length - 1) {
+            if (position == layoutId.length - 1) {
 //                Button bt_finish = (Button) convertView.findViewById(R.id.bt_finish);
 //                bt_finish.setOnClickListener(new View.OnClickListener() {
 //                    @Override
@@ -132,7 +140,13 @@ public class GuideActivity2 extends FragmentActivity implements
 //                        finish();
 //                    }
 //                });
-//            }
+                convertView.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        finish();
+                    }
+                });
+            }
             return convertView;
         }
 
